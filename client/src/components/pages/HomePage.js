@@ -10,7 +10,10 @@ const HomePage = () => {
                       <p style = {heroSubtextStyle} >Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
                       <div className = 'btn btn-primary btn-lg btn-light-custom d-flex'>SEE PRODUCT </div>
 
-                      
+                  </div>
+
+                  <div id = 'hero-image-container' style= {heroImageContainerStyle}>
+                     <img src = '/assets/home/desktop/image-hero.jpg' style = {heroImageStyle}/>
                   </div>
               </div>
         </div>
@@ -21,7 +24,9 @@ export default HomePage;
 
 const heroStyle = {
     background : '#191919',
-    height:'720px'
+    height:'720px',
+    position:'relative',
+    zIndex:'20'
 }
 
 const textContainerStyle = {
@@ -52,6 +57,14 @@ const heroSubtextStyle = {
     marginBottom:'45px'
 }
 
+const heroImageContainerStyle = {
+    position:'relative'
+}
+
 const heroImageStyle = {
-    position:'absolute'
+    position:'absolute',
+    width:'1300px',
+    top:'-540px',
+    zIndex:'-9',
+    left:'-100px'
 }
