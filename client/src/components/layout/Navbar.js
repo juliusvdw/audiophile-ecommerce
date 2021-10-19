@@ -36,6 +36,7 @@ const Navbar = () => {
 const navStyle = {
     backgroundColor :'#191919',
     height:'105px',
+    zIndex:'999'
 }
 
 const navLinkStyle =  {
