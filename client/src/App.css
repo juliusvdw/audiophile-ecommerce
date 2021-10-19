@@ -1,7 +1,26 @@
-.App {
-  text-align: center;
-}
+
 
 .nav-link:hover {
   color:#D87D4A !important
+}
+
+.btn-light-custom {
+  background-color: #D87D4A;
+  font-size: 13px;
+  letter-spacing:1px;
+  width: 160px;
+  height: 48px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0px;
+}
+.btn-light-custom:hover {
+  background-color: #FBAF85;
+  cursor: pointer;
+}
+.btn-light-custom:active {
+  background-color: #FBAF85 !important;
+  cursor: pointer;
 }
