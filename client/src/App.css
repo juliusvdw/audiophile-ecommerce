@@ -1,4 +1,6 @@
-
+.App {
+overflow-y: hidden;
+}
 
 .nav-link:hover {
   color:#D87D4A !important
