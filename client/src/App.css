@@ -31,6 +31,27 @@ a:hover {
   cursor: pointer;
 }
 
+.btn-dark-custom {
+  background-color: #000000;
+  font-size: 13px;
+  letter-spacing:1px;
+  width: 160px;
+  height: 48px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0px;
+}
+.btn-dark-custom:hover {
+  background-color: #4c4c4c;
+  cursor: pointer;
+}
+.btn-dark-custom:active {
+  background-color: #4c4c4c !important;
+  cursor: pointer;
+}
+
 /*Home category section */
 
 .category-link:hover{
