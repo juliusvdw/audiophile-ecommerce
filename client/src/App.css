@@ -2,6 +2,10 @@
 overflow-y: hidden;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .nav-link:hover {
   color:#D87D4A !important
 }
@@ -25,4 +29,11 @@ overflow-y: hidden;
 .btn-light-custom:active {
   background-color: #FBAF85 !important;
   cursor: pointer;
+}
+
+/*Home category section */
+
+.category-link:hover{
+  color:#D87D4A !important;
+  opacity:1 !important
 }
