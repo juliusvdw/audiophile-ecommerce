@@ -19,12 +19,26 @@ const CategoriesSection = () => {
                 </div>
                 <div className = 'col-lg-4 home-category-box' >
                     <div className = 'home-category-box' style = {categoryBoxStyle}>
+                    <div className = 'home-category-image-container w-100'>
+                            <img src = '/assets/shared/desktop/image-speakers.png' style = {categoryImageStyle}/>
+                        </div>
 
+                        <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
+                            <h5 style = {categoryHeaderStyle}>SPEAKERS</h5>
+                            <a href = '#' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </a>
+                        </div>
                     </div>
                 </div>
                 <div className = 'col-lg-4 home-category-box' >
                     <div className = 'home-category-box' style = {categoryBoxStyle}>
+                    <div className = 'home-category-image-container w-100'>
+                            <img src = '/assets/shared/desktop/image-earphones.png' style = {categoryImageStyle}/>
+                        </div>
 
+                        <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
+                            <h5 style = {categoryHeaderStyle}>EARPHONES</h5>
+                            <a href = '#' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -33,7 +47,7 @@ const CategoriesSection = () => {
 }
 
 const containerStyle = {
-    marginTop:'230px'
+    marginTop:'230px',
 }
 const categoryBoxStyle = {
     height:'200px',
