@@ -32,7 +32,17 @@ function FeaturedSection() {
 
             </div>
 
-            <div id = 'third-product'>
+            <div id = 'third-product' style = {thirdProductStyle}>
+                <div className = 'row'>
+                    <div className = 'col-lg-6' style = {thirdImageStyle}>
+                        <img src = '/assets/home/desktop/image-earphones-yx1.jpg' style = {{borderRadius:'8px'}}/>
+                    </div>
+                    <div className = 'col-lg-6' style = {thirdTextStyle}>
+                        <h1 style = {thirdHeadingStyle}>YX1 EARPHONES</h1>
+                        <div className = 'btn btn-primary btn-lg btn-dark-outline-custom d-flex' style = {thirdBtnStyle}>SEE PRODUCT</div>
+
+                    </div>
+                </div>
             </div>
             
         </div>
@@ -127,6 +137,33 @@ const firstTextStyle = {
     const secondBtnStyle = {
         marginTop:'32px',
         zIndex:'999'
+    }
+
+    //Third featured product styling
+
+    const thirdProductStyle = {
+        marginTop:'50px'
+    }
+
+    const thirdImageStyle = {
+        height:'320px',
+        borderRadius:'8px',
+        overflow:'hidden'
+    }
+    const thirdTextStyle = {
+        height:'320px',
+        borderRadius:'8px',
+        backgroundColor:'#f1f1f1',
+        paddingTop:'100px',
+        paddingLeft:'100px'
+    }
+
+    const thirdHeadingStyle = {
+        
+    }
+
+    const thirdBtnStyle = {
+        marginTop:'40px'
     }
 
 export default FeaturedSection
