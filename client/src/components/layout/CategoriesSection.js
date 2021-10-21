@@ -50,9 +50,10 @@ const containerStyle = {
     marginTop:'230px',
 }
 const categoryBoxStyle = {
-    height:'200px',
+    height:'205px',
     backgroundColor :'#f1f1f1',
-    position:'relative'
+    position:'relative',
+    borderRadius:'8px'
 }
 const categoryImageStyle = {
     width:'250px',
