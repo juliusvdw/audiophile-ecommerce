@@ -19,18 +19,29 @@ function FeaturedSection() {
                 
             </div>
 
-            <div id = 'second-product'>
+            <div id = 'second-product' style = {secondProductStyle}>
+
+                <div id = 'second-product-text-container' style = {secondTextStyle}>
+                    <h1 style = {secondHeadingStyle}>ZX7 SPEAKER</h1>
+                    <div className = 'btn btn-primary btn-dark-outline-custom d-flex' style = {secondBtnStyle}>SEE PRODUCT</div>
+
+                </div>
+                <div id = 'second-product-image-container' >
+                    <img src = '/assets/home/desktop/image-speaker-zx7.jpg' style = {secondImageStyle}/>
+                </div>
 
             </div>
 
             <div id = 'third-product'>
-
             </div>
+            
         </div>
 
         </>
     )
 }
+
+//First featured product styling
 
 const containerStyle = {
     marginTop:'170px',
@@ -40,7 +51,8 @@ const firstProductStyle = {
     height:'560px',
     backgroundColor:'#d87d4a',
     borderRadius:'8px',
-    position:'relative'
+    position:'relative',
+    overflow:'hidden'
 }
 
 const firstTextStyle = {
@@ -80,6 +92,41 @@ const firstTextStyle = {
         position:'absolute',
         left:'-145px',
         top:'-20px'
+    }
+
+    //Second featured product styling
+
+    const secondProductStyle = {
+        marginTop:'50px',
+        height:'320px',
+        backgroundColor:'#F1f1f1',
+        borderRadius:'8px',
+        position:'relative',
+        overflow:'hidden'
+        
+    }
+
+    const secondTextStyle = {
+        paddingLeft:'100px',
+        paddingTop:'100px',
+        zIndex:'10',
+        position:'absolute',
+        zIndex:'999'
+    }
+
+    const secondImageStyle = {
+        position:'absolute',
+        top:'0',
+    }
+    const secondHeadingStyle = {
+        fontSize:'28px',
+        letterSpacing:'2px'
+
+    }
+
+    const secondBtnStyle = {
+        marginTop:'32px',
+        zIndex:'999'
     }
 
 export default FeaturedSection
