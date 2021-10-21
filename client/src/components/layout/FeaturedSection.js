@@ -6,7 +6,8 @@ function FeaturedSection() {
         <div className = 'container' style = {containerStyle}>
             <div id = 'first-product' style = {firstProductStyle}>
                 <div id = 'first-product-image-container'>
-
+                    <img src = '/assets/home/desktop/image-speaker-zx9.png'  style  =  {firstImageStyle} />
+                    <img src = '/assets/home/desktop/pattern-circles.svg'  style  =  {firstPatternStyle} />
                 </div>
 
 
@@ -17,9 +18,11 @@ function FeaturedSection() {
                 </div>
                 
             </div>
+
             <div id = 'second-product'>
 
             </div>
+
             <div id = 'third-product'>
 
             </div>
@@ -30,7 +33,7 @@ function FeaturedSection() {
 }
 
 const containerStyle = {
-    marginTop:'170px'
+    marginTop:'170px',
 }
 
 const firstProductStyle = {
@@ -42,10 +45,11 @@ const firstProductStyle = {
 
 const firstTextStyle = {
     position:'absolute',
-    right:'100px',
+    right:'80px',
     color:'white',
     width:'339px',
-    marginTop:'130px'
+    marginTop:'130px',
+    zIndex:'999'
     }
 
  const firstHeadingStyle = {
@@ -60,6 +64,22 @@ const firstTextStyle = {
 
     const firstBtnStyle = {
         marginTop:' 55px'
+    }
+
+    const firstImageStyle = {
+        position:'absolute',
+        height:'600px',
+        height:'480px',
+        bottom:'-10px',
+        left:'130px',
+        zIndex:'11'
+    }
+
+    const firstPatternStyle = {
+        zIndex:'10',
+        position:'absolute',
+        left:'-145px',
+        top:'-20px'
     }
 
 export default FeaturedSection
