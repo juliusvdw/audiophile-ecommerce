@@ -52,9 +52,34 @@ a:hover {
   cursor: pointer;
 }
 
+.btn-dark-outline-custom {
+  background-color: transparent;
+  font-size: 13px;
+  letter-spacing:1px;
+  width: 160px;
+  height: 48px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 0px;
+  color:#000000
+}
+.btn-dark-outline-custom:hover {
+  background-color: #000000 !important;
+  cursor: pointer;
+}
+.btn-dark-outline-custom:active {
+  background-color: #000000 !important;
+  cursor: pointer;
+}
+
 /*Home category section */
 
 .category-link:hover{
   color:#D87D4A !important;
   opacity:1 !important
 }
+
+/* Featured products ssection*/
+
