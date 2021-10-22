@@ -1,19 +1,36 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive'
+
+
 
 const HeroSection = ()=> {
+
+    //Set media query for tablet size 
+    const isTablet  = useMediaQuery({ maxWidth: 1024 })
+    const isDesktop  = useMediaQuery({ minWidth: 1024 })
+
+    //Determine which hero image to be displayed based on device
+
+    let heroImage; 
+    if(isDesktop){
+        heroImage = '/assets/home/desktop/image-hero.jpg'
+    } else if (isTablet){
+        heroImage = '/assets/home/tablet/image-header.jpg'
+    }
+
     return (
     <div id = 'hero-section' style = {heroStyle}>
         <div className = 'container' id = 'hero-section-container'>
             <div id = 'hero-text-container' style = {textContainerStyle}>
                 <p style = {heroLightHeading} className = 'mb-3'>NEW PRODUCT</p>
                 <h1 style = {heroProductHeading} className = 'mb-3'> XX99 MARK 11 HEADPHONES</h1>
-                <p style = {heroSubtextStyle} >Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-                <div className = 'btn btn-primary btn-lg btn-light-custom d-flex'>SEE PRODUCT </div>
+                <p style = {heroSubtextStyle} id = 'hero-subtext'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+                <div className = 'btn btn-primary btn-lg btn-light-custom d-flex' id = 'hero-btn'>SEE PRODUCT </div>
 
             </div>
 
             <div id = 'hero-image-container' style= {heroImageContainerStyle}>
-               <img src = '/assets/home/desktop/image-hero.jpg' style = {heroImageStyle}/>
+               <img src = {`${heroImage}`} style = {heroImageStyle} id ='hero-image'/>
             </div>
         </div>
   </div>
