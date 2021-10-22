@@ -3,6 +3,7 @@ import React from 'react';
 import HeroSection from  '../layout/HeroSection'
 import CategoriesSection from  '../layout/CategoriesSection'
 import FeaturedSection from  '../layout/FeaturedSection'
+import InformationSection from  '../layout/InformationSection'
 
 const HomePage = () => {
     return (
@@ -12,6 +13,8 @@ const HomePage = () => {
       <CategoriesSection />
 
       <FeaturedSection />
+
+      <InformationSection />
 
       </>
     )
