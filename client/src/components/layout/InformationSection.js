@@ -26,7 +26,8 @@ return (
 
 const containerStyle = {
     marginTop:'190px',
-    height:'566px'
+    height:'566px',
+    marginBottom:'195px'
 }
 
 const informationTextStyle = {
