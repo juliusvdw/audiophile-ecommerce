@@ -83,5 +83,38 @@ a:hover {
   opacity:1 !important
 }
 
-/* Featured products ssection*/
+/*Css for tablet breakpoints */
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    #hero-section {
+      height: 640px !important;
+    }
+
+    #hero-text-container {
+      width: 400px !important;
+      text-align: center;
+      margin: 0 auto
+    }
+
+    #hero-subtext {
+      margin: 0 auto;
+    }
+
+    #hero-btn {
+      margin: 0 auto;
+      margin-top:35px  !important
+    }
+
+    #hero-image {
+      width: 100% !important;
+      position: absolute;
+      top:-530px;
+      left:0px !important
+    }
+
+}
 
