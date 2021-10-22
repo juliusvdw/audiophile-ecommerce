@@ -6,9 +6,11 @@ a:hover {
   text-decoration: none;
 }
 
-.nav-link:hover {
-  color:#D87D4A !important
+.link:hover {
+  color:#D87D4A !important;
+  cursor:pointer
 }
+
 
 .btn-light-custom {
   background-color: #D87D4A;
