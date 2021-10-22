@@ -13,16 +13,16 @@ const Navbar = () => {
   <div className ="collapse navbar-collapse" id="navbarNav">
     <ul className ="navbar-nav mx-auto" style = {navLinkStyle}>
       <li className ="nav-item text-white">
-        <a className ="nav-link text-white" href="#">HOME </a>
+        <a className ="nav-link text-white link" href="#">HOME </a>
       </li>
       <li className ="nav-item">
-        <a className ="nav-link text-white" href="#">HEADPHONES</a>
+        <a className ="nav-link text-white link" href="#">HEADPHONES</a>
       </li>
       <li className ="nav-item">
-        <a className ="nav-link text-white" href="#">SPEAKERS</a>
+        <a className ="nav-link text-white link" href="#">SPEAKERS</a>
       </li>
       <li className ="nav-item">
-        <a className ="nav-link text-white" href="#">EARPHONES</a>
+        <a className ="nav-link text-white link" href="#">EARPHONES</a>
       </li>
     </ul>
   </div>
