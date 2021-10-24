@@ -1,15 +1,33 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive'
+
+
 
 const Footer = () => {
+
+     //Set media query for device size 
+ const isTablet  = useMediaQuery({ maxWidth: 1024 })
+ const isDesktop  = useMediaQuery({ minWidth: 1024 })
+
     return (
         <div id = 'footer-container ' style = {footerContainerStyle}>
             <div className = 'container d-flex flex-row'>
 
             
-                 <div id = 'footer-text-section d-flex' style = {textSectionStyle} >
+                <div id = 'footer-text-section ' style = {textSectionStyle} >
                      <div id = 'footer-logo'>
                          <img src = '/assets/shared/desktop/logo.svg' />
                      </div>
+
+                    {isTablet && 
+                     <div id = 'footer-links-container ' className = 'd-flex flex-row w-100 text-left' style = {isTablet &&linksContainerTablet}> 
+                        <a  style = {linkStyle} className = 'link footer-link'>HOME</a>
+                        <a  style = {linkStyle} className = 'link footer-link'>HEADPHONES</a>
+                        <a  style = {linkStyle} className = 'link footer-link'>SPEAKERS</a>
+                        <a  style = {linkStyle} className = 'link footer-link'>EARPHONES</a>
+                        
+                     </div> 
+                        }                   
                      
                      <p id ='footer-text' style = {footerTextStyle}>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
 
@@ -17,8 +35,8 @@ const Footer = () => {
                      
                  </div>
 
-                 <div id = 'footer-links-section w-100 ' style = {linksSectionStyle} >
-                     <div className = 'd-flex flex-row w-100 text-right' style = {linksContainerStyle}> 
+                 { isDesktop && <div id = 'footer-links-section w-100 ' style = {linksSectionStyle} >
+                     <div className = 'd-flex flex-row w-100 text-right' > 
                         <a style = {linkStyle} className = 'link'>HOME</a>
                         <a style = {linkStyle} className = 'link'>HEADPHONES</a>
                         <a style = {linkStyle} className = 'link'>SPEAKERS</a>
@@ -26,7 +44,7 @@ const Footer = () => {
                         
                      </div>
 
-                 </div>
+                 </div>}
 
             </div>
         </div>
@@ -43,7 +61,6 @@ const footerContainerStyle = {
 }
 
 const textSectionStyle = {
-    maxWidth:'50%',
 }
 
 const footerTextStyle = {
@@ -65,8 +82,8 @@ const linksSectionStyle = {
     width:'100%',
 }
 
-const linksContainerStyle = {
-    justifyContent:'end'
+const linksContainerTablet = {
+    marginTop:'30px'
 }
 
 const linkStyle =  {
