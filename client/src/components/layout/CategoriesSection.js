@@ -4,10 +4,10 @@ const CategoriesSection = () => {
     return (
         <div className = 'container' style = {containerStyle}>
             <div className = 'row'>
-                <div className = 'col-lg-4 home-category-box' >
+                <div className = 'col-lg-4 col-md-4 home-category-box' >
                     <div className = 'home-category-box' style = {categoryBoxStyle}>
                         <div className = 'home-category-image-container w-100'>
-                            <img src = '/assets/shared/desktop/image-headphones.png' style = {categoryImageStyle}/>
+                            <img src = '/assets/shared/desktop/image-headphones.png' className = 'home-categories-image' style = {categoryImageStyle}/>
                         </div>
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
@@ -17,10 +17,10 @@ const CategoriesSection = () => {
 
                     </div>
                 </div>
-                <div className = 'col-lg-4 home-category-box' >
+                <div className = 'col-lg-4 col-md-4 home-category-box' >
                     <div className = 'home-category-box' style = {categoryBoxStyle}>
                     <div className = 'home-category-image-container w-100'>
-                            <img src = '/assets/shared/desktop/image-speakers.png' style = {categoryImageStyle}/>
+                            <img src = '/assets/shared/desktop/image-speakers.png' className = 'home-categories-image' style = {categoryImageStyle}/>
                         </div>
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
@@ -29,10 +29,10 @@ const CategoriesSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className = 'col-lg-4 home-category-box' >
+                <div className = 'col-lg-4 col-md-4 home-category-box' >
                     <div className = 'home-category-box' style = {categoryBoxStyle}>
                     <div className = 'home-category-image-container w-100'>
-                            <img src = '/assets/shared/desktop/image-earphones.png' style = {categoryImageStyle}/>
+                            <img src = '/assets/shared/desktop/image-earphones.png' className = 'home-categories-image' style = {categoryImageStyle}/>
                         </div>
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
