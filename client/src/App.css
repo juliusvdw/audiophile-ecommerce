@@ -124,5 +124,34 @@ a:hover {
       width: 200px !important
     }
 
+    /*Home featured products section */
+
+    #first-product {
+      height:720px !important
+    }
+
+    #first-product-text-container {
+      transform: translate(-50%, -50%) !important;
+      left:50% !important;
+      bottom: -200px !important;
+      text-align:center !important
+    }
+
+    #featured-first-btn {
+      margin: 55px auto !important;
+    }
+
+    #featured-first-image {
+      top:170px !important;
+      left: 50% !important;
+      transform: translate(-50%,-50%) !important;
+      height:200px !important
+    }
+    #featured-first-pattern {
+      top:170px !important;
+      left: 50% !important;
+      transform: translate(-50%,-50%) !important;
+      
+    }
 }
 
