@@ -6,15 +6,15 @@ function FeaturedSection() {
         <div className = 'container' style = {containerStyle}>
             <div id = 'first-product' style = {firstProductStyle}>
                 <div id = 'first-product-image-container'>
-                    <img src = '/assets/home/desktop/image-speaker-zx9.png'  style  =  {firstImageStyle} />
-                    <img src = '/assets/home/desktop/pattern-circles.svg'  style  =  {firstPatternStyle} />
+                    <img id = 'featured-first-image' src = '/assets/home/desktop/image-speaker-zx9.png'  style  =  {firstImageStyle} />
+                    <img id = 'featured-first-pattern' src = '/assets/home/desktop/pattern-circles.svg'  style  =  {firstPatternStyle} />
                 </div>
 
 
                 <div id = 'first-product-text-container' style = {firstTextStyle}>
                     <h1 style = {firstHeadingStyle} className = 'mb-4'> ZX9 SPEAKER</h1>
                     <p style = {firstSubtextStyle}>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                    <div className = 'btn btn-primary btn-lg btn-dark-custom d-flex' style = {firstBtnStyle}>SEE PRODUCT</div>
+                    <div id = 'featured-first-btn' className = 'btn btn-primary btn-lg btn-dark-custom d-flex' style = {firstBtnStyle}>SEE PRODUCT</div>
                 </div>
                 
             </div>
