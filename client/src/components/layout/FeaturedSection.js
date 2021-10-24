@@ -1,6 +1,25 @@
 import React from 'react'
+import { useMediaQuery } from 'react-responsive'
 
-function FeaturedSection() {
+
+const FeaturedSection = () => {
+
+      //Set media query for tablet size 
+      const isTablet  = useMediaQuery({ maxWidth: 1024 })
+      const isDesktop  = useMediaQuery({ minWidth: 1024 })
+  
+      //Determine which hero image to be displayed based on device
+  
+      let secondImage; 
+      let thirdImage;
+      if(isDesktop){
+          secondImage = '/assets/home/desktop/image-speaker-zx7.jpg'
+          thirdImage = '/assets/home/desktop/image-earphones-yx1.jpg'
+      } else if (isTablet){
+        secondImage = '/assets/home/tablet/image-speaker-zx7.jpg'
+        thirdImage = '/assets/home/tablet/image-earphones-yx1.jpg'
+      }
+
     return (
         <>
         <div className = 'container' style = {containerStyle}>
@@ -27,18 +46,18 @@ function FeaturedSection() {
 
                 </div>
                 <div id = 'second-product-image-container' >
-                    <img src = '/assets/home/desktop/image-speaker-zx7.jpg' style = {secondImageStyle}/>
+                    <img src = {`${secondImage}`} style = {secondImageStyle}/>
                 </div>
 
             </div>
 
             <div id = 'third-product' style = {thirdProductStyle}>
                 <div className = 'row'>
-                    <div className = 'col-lg-6' style = {thirdImageStyle}>
-                        <img src = '/assets/home/desktop/image-earphones-yx1.jpg' style = {{borderRadius:'8px'}}/>
+                    <div className = 'col-lg-6 col-md-6' style = {thirdImageStyle}>
+                        <img id = 'featured-third-image' src = {`${thirdImage}`} style = {{borderRadius:'8px'}}/>
                     </div>
-                    <div className = 'col-lg-6' style = {thirdTextStyle}>
-                        <h1 style = {thirdHeadingStyle}>YX1 EARPHONES</h1>
+                    <div id = 'featured-third-text' className = 'col-lg-6 col-md-6' style = {thirdTextStyle}>
+                        <h1 id = 'featured-third-text-heading' style = {thirdHeadingStyle}>YX1 EARPHONES</h1>
                         <div className = 'btn btn-primary btn-lg btn-dark-outline-custom d-flex' style = {thirdBtnStyle}>SEE PRODUCT</div>
 
                     </div>
