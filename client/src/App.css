@@ -167,5 +167,23 @@ a:hover {
     #featured-third-text-heading {
       font-size: 28px !important;
     }
+
+    /*Information section */
+
+    #information-text-section { 
+      order:2;
+      
+      
+      
+    }
+    #information-text-container { 
+      text-align: center;
+      width: 573px !important;
+      margin: 30px auto !important;
+      
+    }
+    #information-image-section { 
+      order:1
+    }
 }
 
