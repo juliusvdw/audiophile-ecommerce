@@ -153,5 +153,19 @@ a:hover {
       transform: translate(-50%,-50%) !important;
       
     }
+
+    #featured-third-image {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    #featured-third-text {
+      padding-top:100px !important;
+      padding-left:50px !important;
+    }
+
+    #featured-third-text-heading {
+      font-size: 28px !important;
+    }
 }
 
