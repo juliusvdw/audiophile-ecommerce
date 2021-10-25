@@ -2,7 +2,7 @@ import React from "react";
 
 const CategoriesSection = () => {
     return (
-        <div id = 'featured-container' className = 'container' style = {containerStyle}>
+        <div id = 'categories-container' className = 'container' style = {containerStyle}>
             <div className = 'row'>
                 <div className = 'col-lg-4 col-md-4 home-category-box' >
                     <div className = 'home-category-box' style = {categoryBoxStyle}>
