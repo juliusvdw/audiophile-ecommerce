@@ -2,7 +2,7 @@ import React from "react";
 
 const CategoriesSection = () => {
     return (
-        <div className = 'container' style = {containerStyle}>
+        <div id = 'featured-container' className = 'container' style = {containerStyle}>
             <div className = 'row'>
                 <div className = 'col-lg-4 col-md-4 home-category-box' >
                     <div className = 'home-category-box' style = {categoryBoxStyle}>
@@ -11,7 +11,7 @@ const CategoriesSection = () => {
                         </div>
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
-                            <h5 style = {categoryHeaderStyle}>HEADPHONES</h5>
+                            <h5 style = {categoryHeaderStyle} className = 'categories-header'>HEADPHONES</h5>
                             <a href = '#' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </a>
                         </div>
 
@@ -24,7 +24,7 @@ const CategoriesSection = () => {
                         </div>
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
-                            <h5 style = {categoryHeaderStyle}>SPEAKERS</h5>
+                            <h5 style = {categoryHeaderStyle} className = 'categories-header'>SPEAKERS</h5>
                             <a href = '#' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </a>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ const CategoriesSection = () => {
                         </div>
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
-                            <h5 style = {categoryHeaderStyle}>EARPHONES</h5>
+                            <h5 style = {categoryHeaderStyle} className = 'categories-header'>EARPHONES</h5>
                             <a href = '#' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </a>
                         </div>
                     </div>

@@ -237,8 +237,27 @@ a:hover {
 
   /* Home Categories section styles */
  
+  #featured-container {
+    margin-top:0px !important
+  }
   .home-category-box {
-    margin-top: 60px
+    margin-top: 85px
+  }
+
+  .home-categories-image {
+    width:180px !important
+  }
+
+  .home-category-box {
+    height:165px !important
+  }
+
+  .home-category-text-container {
+    padding-top:95px !important
+  }
+
+  .categories-header {
+    font-size:15px !important
   }
 
 
