@@ -5,34 +5,39 @@ import { useMediaQuery } from 'react-responsive'
 const FeaturedSection = () => {
 
       //Set media query for tablet size 
-      const isTablet  = useMediaQuery({ maxWidth: 1024 })
+      const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 720 })
       const isDesktop  = useMediaQuery({ minWidth: 1024 })
-  
+      const isMobile  = useMediaQuery({ maxWidth: 480 })
+
       //Determine which hero image to be displayed based on device
-  
+      let firstImage;
       let secondImage; 
       let thirdImage;
       if(isDesktop){
+          firstImage = '/assets/home/desktop/image-speaker-zx9.png'
           secondImage = '/assets/home/desktop/image-speaker-zx7.jpg'
           thirdImage = '/assets/home/desktop/image-earphones-yx1.jpg'
       } else if (isTablet){
+        firstImage = '/assets/home/desktop/image-speaker-zx9.png'
         secondImage = '/assets/home/tablet/image-speaker-zx7.jpg'
         thirdImage = '/assets/home/tablet/image-earphones-yx1.jpg'
+      } else {
+        firstImage = '/assets/home/mobile/image-speaker-zx9.png'
       }
 
     return (
         <>
-        <div className = 'container' style = {containerStyle}>
+        <div id = 'featured-container' className = 'container' style = {containerStyle}>
             <div id = 'first-product' style = {firstProductStyle}>
                 <div id = 'first-product-image-container'>
-                    <img id = 'featured-first-image' src = '/assets/home/desktop/image-speaker-zx9.png'  style  =  {firstImageStyle} />
+                    <img id = 'featured-first-image' src = {`${firstImage}`}  style  =  {firstImageStyle} />
                     <img id = 'featured-first-pattern' src = '/assets/home/desktop/pattern-circles.svg'  style  =  {firstPatternStyle} />
                 </div>
 
 
                 <div id = 'first-product-text-container' style = {firstTextStyle}>
-                    <h1 style = {firstHeadingStyle} className = 'mb-4'> ZX9 SPEAKER</h1>
-                    <p style = {firstSubtextStyle}>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+                    <h1 style = {firstHeadingStyle} className = 'mb-4 featured-product-header'> ZX9 SPEAKER</h1>
+                    <p style = {firstSubtextStyle} className = 'featured-product-subtext'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
                     <div id = 'featured-first-btn' className = 'btn btn-primary btn-lg btn-dark-custom d-flex' style = {firstBtnStyle}>SEE PRODUCT</div>
                 </div>
                 
