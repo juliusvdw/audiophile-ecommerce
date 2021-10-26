@@ -5,8 +5,9 @@ import { useMediaQuery } from 'react-responsive'
 const InformationSection = () => {
 
     //Set media query for tablet size 
-    const isTablet  = useMediaQuery({ maxWidth: 1024 })
+    const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 720 })
     const isDesktop  = useMediaQuery({ minWidth: 1024 })
+    const isMobile  = useMediaQuery({ maxWidth: 480 })
 
     //Determine which hero image to be displayed based on device
 
@@ -16,10 +17,12 @@ const InformationSection = () => {
     } else if (isTablet){
         imageLink = '/assets/shared/tablet/image-best-gear.jpg'
 
+    } else {
+        imageLink = '/assets/shared/mobile/image-best-gear.jpg'
     }
 
 return (
-     <div className = 'container' style = {containerStyle}>
+     <div id = 'information-container' className = 'container' style = {containerStyle}>
          <div className = 'row h-100 '>
              <div id = 'information-text-section' className = 'col-lg-6'>
                  <div id = 'information-text-container' className = 'd-flex flex-column h-100 ' style = {informationTextStyle} >
