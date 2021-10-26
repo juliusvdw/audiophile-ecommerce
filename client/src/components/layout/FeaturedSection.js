@@ -23,6 +23,8 @@ const FeaturedSection = () => {
         thirdImage = '/assets/home/tablet/image-earphones-yx1.jpg'
       } else {
         firstImage = '/assets/home/mobile/image-speaker-zx9.png'
+        secondImage = '/assets/home/mobile/image-speaker-zx7.jpg'
+        thirdImage = '/assets/home/mobile/image-earphones-yx1.jpg'
       }
 
     return (
@@ -51,17 +53,17 @@ const FeaturedSection = () => {
 
                 </div>
                 <div id = 'second-product-image-container' >
-                    <img src = {`${secondImage}`} style = {secondImageStyle}/>
+                    <img id = 'featured-second-image' src = {`${secondImage}`} style = {secondImageStyle}/>
                 </div>
 
             </div>
 
             <div id = 'third-product' style = {thirdProductStyle}>
                 <div className = 'row'>
-                    <div className = 'col-lg-6 col-md-6' style = {thirdImageStyle}>
+                    <div id className = 'col-lg-6 col-md-6 featured-third-box' style = {thirdImageStyle}>
                         <img id = 'featured-third-image' src = {`${thirdImage}`} style = {{borderRadius:'8px'}}/>
                     </div>
-                    <div id = 'featured-third-text' className = 'col-lg-6 col-md-6' style = {thirdTextStyle}>
+                    <div id = 'featured-third-text' className = 'col-lg-6 col-md-6 featured-third-box' style = {thirdTextStyle}>
                         <h1 id = 'featured-third-text-heading' style = {thirdHeadingStyle}>YX1 EARPHONES</h1>
                         <div className = 'btn btn-primary btn-lg btn-dark-outline-custom d-flex' style = {thirdBtnStyle}>SEE PRODUCT</div>
 
@@ -183,7 +185,7 @@ const firstTextStyle = {
     }
 
     const thirdHeadingStyle = {
-        
+        fontSize:'28px'
     }
 
     const thirdBtnStyle = {

@@ -263,7 +263,7 @@ a:hover {
   /*Featured products mobile style */
 
   #featured-container {
-    height: 600px !important;
+    height: auto !important;
     margin-top:160px !important
   }
 
@@ -295,6 +295,33 @@ a:hover {
 
   #featured-first-btn {
     margin:20px auto !important
+  }
+
+  #second-product {
+    height: 320px !important;
+  }
+
+  #second-product-text-container {
+    padding-left: 30px !important;
+  }
+
+  #featured-second-image {
+    width:100% !important
+  }
+
+  .featured-third-box {
+    height: 200px !important;
+  }
+
+  #featured-third-image {
+    width:100% !important
+  }
+
+  #featured-third-text {
+    margin:15px  !important;
+    margin-top: 25px !important;
+    padding-top:40px !important;
+    padding-left: 25px !important;
   }
 
 
