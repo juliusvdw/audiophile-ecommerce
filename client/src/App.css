@@ -324,6 +324,30 @@ a:hover {
     padding-left: 25px !important;
   }
 
+  /*Information section mobile style */
+
+  #information-container {
+    height:700px !important;
+    margin-top: 120px !important;
+  }
+
+  #information-image-section {
+    order:1 !important
+  }
+  #information-text-section {
+    order: 2 !important;
+  }
+
+  #information-text-container {
+    width: 100% !important;
+    text-align:center !important
+  }
+
+  #information-heading {
+    font-size: 28px !important;
+    font-weight:bold !important
+  }
+
 
 
   }

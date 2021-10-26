@@ -26,7 +26,7 @@ return (
          <div className = 'row h-100 '>
              <div id = 'information-text-section' className = 'col-lg-6'>
                  <div id = 'information-text-container' className = 'd-flex flex-column h-100 ' style = {informationTextStyle} >
-                    <h1 className = 'mb-4' style = {informationHeadingStyle}>BRINGING YOU THE <span style = {{color:'#d87d4a'}}>BEST</span> AUDIO GEAR</h1>
+                    <h1 id = 'information-heading' className = 'mb-4' style = {informationHeadingStyle}>BRINGING YOU THE <span style = {{color:'#d87d4a'}}>BEST</span> AUDIO GEAR</h1>
                     <p style = {informationSubtextextStyle}>Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
                  </div>
                  
