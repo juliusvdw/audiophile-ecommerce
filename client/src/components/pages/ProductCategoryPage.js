@@ -1,6 +1,8 @@
 import React from 'react';
 
 import CategoryProducts from '../layout/featuredPage/CategoryProducts';
+import CategoriesSection from '../layout/CategoriesSection';
+import InformationSection from '../layout/InformationSection';
 
 const CategoryPage = () => {
 return (
@@ -12,6 +14,8 @@ return (
 
     <div className = 'container'>
                 < CategoryProducts />
+                <CategoriesSection/>
+                <InformationSection />
 
     </div>
     </>

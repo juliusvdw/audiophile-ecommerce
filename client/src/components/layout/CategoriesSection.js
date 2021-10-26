@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 const CategoriesSection = () => {
     return (
@@ -12,7 +13,7 @@ const CategoriesSection = () => {
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
                             <h5 style = {categoryHeaderStyle} className = 'categories-header'>HEADPHONES</h5>
-                            <a href = '#' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </a>
+                            <Link to = '/category/headphones' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </Link>
                         </div>
 
                     </div>
@@ -25,7 +26,7 @@ const CategoriesSection = () => {
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
                             <h5 style = {categoryHeaderStyle} className = 'categories-header'>SPEAKERS</h5>
-                            <a href = '#' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </a>
+                            <Link to = 'category/speakers' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </Link>
                         </div>
                     </div>
                 </div>
@@ -37,7 +38,7 @@ const CategoriesSection = () => {
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
                             <h5 style = {categoryHeaderStyle} className = 'categories-header'>EARPHONES</h5>
-                            <a href = '#' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </a>
+                            <Link to = 'category/earphones' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </Link>
                         </div>
                     </div>
                 </div>
