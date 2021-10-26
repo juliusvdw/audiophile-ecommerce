@@ -335,6 +335,7 @@ a:hover {
   #information-container {
     height:700px !important;
     margin-top: 120px !important;
+    margin-bottom: 50px !important;
   }
 
   #information-image-section {
@@ -352,6 +353,34 @@ a:hover {
   #information-heading {
     font-size: 28px !important;
     font-weight:bold !important
+  }
+
+  /*Footer styling mobile  */
+
+  
+  .footer-link {
+    margin-left: 0px !important;
+    margin-bottom: 25px !important;
+  }
+
+  #footer-links-container {
+  }
+
+  #footer-logo {
+    text-align: center !important;
+    margin-bottom: 40px;
+  }
+
+  .footer-link {
+    text-align: center;
+  }
+
+  #footer-text {
+    text-align: center;
+  }
+  #footer-copywright {
+    text-align: center;
+    margin-top: 40px !important;
   }
 
 

@@ -6,8 +6,9 @@ import { useMediaQuery } from 'react-responsive'
 const Footer = () => {
 
      //Set media query for device size 
- const isTablet  = useMediaQuery({ maxWidth: 1024 })
- const isDesktop  = useMediaQuery({ minWidth: 1024 })
+     const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 780 })
+     const isDesktop  = useMediaQuery({ minWidth: 1024 })
+     const isMobile  = useMediaQuery({ maxWidth: 480 })
 
     return (
         <div id = 'footer-container ' style = {footerContainerStyle}>
@@ -20,7 +21,17 @@ const Footer = () => {
                      </div>
 
                     {isTablet && 
-                     <div id = 'footer-links-container ' className = 'd-flex flex-row w-100 text-left' style = {isTablet &&linksContainerTablet}> 
+                     <div id = 'footer-links-container ' className = 'd-flex w-100 text-left' style = {linksContainerTablet}> 
+                        <a  style = {linkStyle} className = 'link footer-link'>HOME</a>
+                        <a  style = {linkStyle} className = 'link footer-link'>HEADPHONES</a>
+                        <a  style = {linkStyle} className = 'link footer-link'>SPEAKERS</a>
+                        <a  style = {linkStyle} className = 'link footer-link'>EARPHONES</a>
+                        
+                     </div> 
+                        }    
+
+                    {isMobile && 
+                     <div id = 'footer-links-container ' className = 'd-flex flex-column ' style = {linksContainerMobile}> 
                         <a  style = {linkStyle} className = 'link footer-link'>HOME</a>
                         <a  style = {linkStyle} className = 'link footer-link'>HEADPHONES</a>
                         <a  style = {linkStyle} className = 'link footer-link'>SPEAKERS</a>
@@ -31,7 +42,7 @@ const Footer = () => {
                      
                      <p id ='footer-text' style = {footerTextStyle}>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
 
-                     <p style = {copywrightStyle}>Copyright 2021. All Rights Reserved</p>
+                     <p id = 'footer-copywright'style = {copywrightStyle}>Copyright 2021. All Rights Reserved</p>
                      
                  </div>
 
@@ -52,7 +63,7 @@ const Footer = () => {
 }
 
 const footerContainerStyle = {
-    height:'365px',
+    minHeight:'365px',
     width:'100%',
     backgroundColor:'#000000',
     paddingTop:'85px',
@@ -84,6 +95,10 @@ const linksSectionStyle = {
 
 const linksContainerTablet = {
     marginTop:'30px'
+}
+
+const linksContainerMobile = {
+
 }
 
 const linkStyle =  {
