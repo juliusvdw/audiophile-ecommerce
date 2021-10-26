@@ -48,6 +48,7 @@ const CategoriesSection = () => {
 
 const containerStyle = {
     marginTop:'230px',
+    marginBottom:'150px'
 }
 const categoryBoxStyle = {
     height:'205px',
