@@ -1,10 +1,20 @@
 import React from 'react';
 
+import CategoryProducts from '../layout/featuredPage/CategoryProducts';
+
 const CategoryPage = () => {
 return (
+    <>
     <div style = {headerContainerStyle}>
         <h1 style = {headerStyle}>HEADPHONES</h1>
+
     </div>
+
+    <div className = 'container'>
+                < CategoryProducts />
+
+    </div>
+    </>
 )
 }
 
