@@ -20,7 +20,7 @@ function App() {
       <Switch>
 
       <Route exact path = {'/'} render  = {(props) => <HomePage {...props} />}/>
-      <Route exact path = {'/category'} render  = {(props) => <ProductCategoryPage {...props} />}/>
+      <Route  path = {'/category/:category'} render  = {(props) => <ProductCategoryPage {...props} />}/>
 
       </Switch>
 
