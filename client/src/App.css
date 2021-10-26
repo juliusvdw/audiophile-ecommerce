@@ -76,6 +76,11 @@ a:hover {
   cursor: pointer;
 }
 
+/*Home hero section */
+#hero-section {
+  overflow: hidden;
+}
+
 /*Home category section */
 
 .category-link:hover{
@@ -93,6 +98,7 @@ a:hover {
 
     #hero-section {
       height: 640px !important;
+      
     }
 
     #hero-text-container {
