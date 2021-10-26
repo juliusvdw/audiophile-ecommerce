@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive'
 const HeroSection = ()=> {
 
     //Set media query for tablet size 
-    const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 720 })
+    const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 780 })
     const isDesktop  = useMediaQuery({ minWidth: 1024 })
     const isMobile  = useMediaQuery({ maxWidth: 480 })
 
