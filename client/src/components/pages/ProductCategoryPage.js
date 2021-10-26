@@ -4,11 +4,13 @@ import CategoryProducts from '../layout/featuredPage/CategoryProducts';
 import CategoriesSection from '../layout/CategoriesSection';
 import InformationSection from '../layout/InformationSection';
 
-const CategoryPage = () => {
+const CategoryPage = (props) => {
+
+    console.log(props.match.params.category)
 return (
     <>
     <div style = {headerContainerStyle}>
-        <h1 style = {headerStyle}>HEADPHONES</h1>
+        <h1 style = {headerStyle}>{props.match.params.category.toUpperCase()}</h1>
 
     </div>
 
