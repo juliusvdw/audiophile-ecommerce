@@ -205,6 +205,31 @@ a:hover {
       margin-left :0px !important;
       margin-right:35px !important
     }
+
+    /*Categories page */
+
+    #category-product-row {
+      margin-top: 115px !important;
+      margin-bottom: 115px !important;
+    }
+
+    .category-product-text-container {
+      margin-top: 60px !important;
+      padding-left: 50px !important;
+      padding-right: 50px !important;
+      text-align: center;
+    }
+
+    .category-product-btn {
+      margin: 30px auto !important;
+    }
+
+    #category-product-right-text {
+      order: 2;
+    }
+    #category-product-right-image {
+      order: 1;
+    }
 }
 
 /*Mobile breakpoint */

@@ -3,7 +3,7 @@ import React from 'react';
 const CategoryProductLeft = () => {
     return (
             <> 
-                <div className = 'row' style = {rowStyle}>
+                <div id = 'category-product-row' className = 'row' style = {rowStyle}>
                     <div className = 'col-lg-6'>
                         <img src = '/assets/category-headphones/desktop/image-xx99-mark-two.jpg' className = 'img-fluid' style = {imageStyle}/>
                     </div>
@@ -12,7 +12,7 @@ const CategoryProductLeft = () => {
                             <h6 style = {newProductStyle} >NEW PRODUCT</h6>
                             <h1 className = 'mb-4' style = {titleStyle}>XX99 Mark II Headphones</h1>
                             <p className = 'mb-4' style = {subTextStyle}>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
-                            <div className = 'btn btn-lg btn-light-custom d-flex text-white'>SEE PRODUCT</div>
+                            <div className = 'btn btn-lg btn-light-custom d-flex text-white category-product-btn'>SEE PRODUCT</div>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ const CategoryProductLeft = () => {
 }
 
 const rowStyle = {
-    height:'560px',
+    minHeight:'560px',
     marginTop:'160px',
     marginBottom:'160px'
 }

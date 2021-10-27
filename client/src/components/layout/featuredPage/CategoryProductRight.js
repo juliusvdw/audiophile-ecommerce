@@ -3,17 +3,17 @@ import React from 'react';
 const CategoryProductRight = () => {
     return (
             <> 
-                <div className = 'row' style = {rowStyle}>
-                    <div className = 'col-lg-6' style = {textContainerStyle}>
+                <div id = 'category-product-row' className = 'row' style = {rowStyle}>
+                    <div id = 'category-product-right-text'className = 'col-lg-6' style = {textContainerStyle}>
                     <div className = 'category-product-text-container' style = {textStyle}>
                             <h6 style = {newProductStyle} >NEW PRODUCT</h6>
                             <h1 className = 'mb-4' style = {titleStyle}>XX99 Mark II Headphones</h1>
                             <p className = 'mb-4' style = {subTextStyle}>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
-                            <div className = 'btn btn-lg btn-light-custom d-flex text-white'>SEE PRODUCT</div>
+                            <div className = 'btn btn-lg btn-light-custom d-flex text-white category-product-btn'>SEE PRODUCT</div>
                         </div>
                     </div>
                     <div className = 'col-lg-6' >
-                    <img src = '/assets/category-headphones/desktop/image-xx99-mark-one.jpg' className = 'img-fluid' style = {imageStyle}/>
+                    <img id = 'category-product-right-image' src = '/assets/category-headphones/desktop/image-xx99-mark-one.jpg' className = 'img-fluid' style = {imageStyle}/>
 
                     </div>
                 </div>
@@ -23,7 +23,7 @@ const CategoryProductRight = () => {
 }
 
 const rowStyle = {
-    height:'560px',
+    minHeight:'560px',
     marginTop:'160px',
     marginBottom:'160px'
 }
