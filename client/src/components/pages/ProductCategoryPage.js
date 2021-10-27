@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CategoryProducts from '../layout/featuredPage/CategoryProducts';
+import CategoryProducts from '../layout/categoryPage/CategoryProducts';
 import CategoriesSection from '../layout/CategoriesSection';
 import InformationSection from '../layout/InformationSection';
 
@@ -9,7 +9,7 @@ const CategoryPage = (props) => {
     console.log(props.match.params.category)
 return (
     <>
-    <div style = {headerContainerStyle}>
+    <div id = 'category-page-header-container' style = {headerContainerStyle}>
         <h1 style = {headerStyle}>{props.match.params.category.toUpperCase()}</h1>
 
     </div>

@@ -6,9 +6,9 @@ const CategoryProductRight = () => {
                 <div id = 'category-product-row' className = 'row' style = {rowStyle}>
                     <div id = 'category-product-right-text'className = 'col-lg-6' style = {textContainerStyle}>
                     <div className = 'category-product-text-container' style = {textStyle}>
-                            <h6 style = {newProductStyle} >NEW PRODUCT</h6>
-                            <h1 className = 'mb-4' style = {titleStyle}>XX99 Mark II Headphones</h1>
-                            <p className = 'mb-4' style = {subTextStyle}>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
+                            <h6 className = 'category-product-new mb-3' style = {newProductStyle} >NEW PRODUCT</h6>
+                            <h1 className = 'mb-4 category-product-title' style = {titleStyle}>XX99 Mark II Headphones</h1>
+                            <p className = 'mb-4 category-product-subtext' style = {subTextStyle}>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
                             <div className = 'btn btn-lg btn-light-custom d-flex text-white category-product-btn'>SEE PRODUCT</div>
                         </div>
                     </div>
