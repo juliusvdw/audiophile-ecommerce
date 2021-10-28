@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ThreeImages from '../layout/productPage/ThreeImages'
+
 const ProductPage = () => {
     return (
         <>
@@ -26,7 +28,7 @@ const ProductPage = () => {
                     </div>
                 </div>
 
-                <div className = 'featured-section'>
+                <div className = 'features-section'>
                     <div className = 'row'>
 
                     <div className = 'col-lg-7'>
@@ -57,6 +59,8 @@ const ProductPage = () => {
                     </div>
 
                 </div>
+
+                <ThreeImages />
                 </div>
         </>
     )
