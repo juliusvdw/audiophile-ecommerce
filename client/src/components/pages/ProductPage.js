@@ -2,6 +2,9 @@ import React from 'react';
 
 import ThreeImages from '../layout/productPage/ThreeImages'
 import Recommended from '../layout/productPage/Recommended'
+import CategoriesSection from '../layout/CategoriesSection'
+import InformationSection from '../layout/InformationSection'
+import CategoryProductRight from '../layout/categoryPage/CategoryProductRight';
 
 const ProductPage = () => {
     return (
@@ -64,6 +67,10 @@ const ProductPage = () => {
                 <ThreeImages />
 
                 <Recommended />
+
+                <CategoriesSection />
+
+                <InformationSection />
                 </div>
         </>
     )
