@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import ThreeImages from '../layout/productPage/ThreeImages'
 import Recommended from '../layout/productPage/Recommended'
@@ -7,18 +8,37 @@ import InformationSection from '../layout/InformationSection'
 import CategoryProductRight from '../layout/categoryPage/CategoryProductRight';
 
 const ProductPage = () => {
+
+     //Set media query for reposnisve size 
+     const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 780 })
+     const isDesktop  = useMediaQuery({ minWidth: 1024 })
+     const isMobile  = useMediaQuery({ maxWidth: 480 })
+
+     //Determine which image to display for profuct based on screen size
+     let productImage;
+
+     if(isDesktop){
+        productImage = '/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg'
+     } else if (isTablet){
+        productImage = '/assets/product-xx99-mark-two-headphones/tablet/image-product.jpg'
+     }else {
+        productImage = '/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg'
+     }
+
+
+
     return (
         <>
         <div className = 'container'>
          <div id = 'category-product-row' className = 'row' style = {rowStyle}>
-                    <div className = 'col-lg-6'>
-                        <img src = '/assets/category-headphones/desktop/image-xx99-mark-two.jpg' className = 'img-fluid' style = {imageStyle}/>
+                    <div className = 'col-lg-6 col-md-5'>
+                        <img src = {`${productImage}`} className = 'img-fluid h-100' style = {imageStyle}/>
                     </div>
-                    <div className = 'col-lg-6' style = {textContainerStyle}>
-                        <div className = 'category-product-text-container' style = {textStyle}>
+                    <div className = 'col-lg-6 col-md-7' style = {textContainerStyle}>
+                        <div className = 'category-product-text-container product-container' style = {textStyle}>
                             <h6  className = 'mb-3' style = {newProductStyle} >NEW PRODUCT</h6>
-                            <h1 className = 'mb-4 category-product-title' style = {titleStyle}>XX99 Mark II Headphones</h1>
-                            <p className = 'mb-4 category-product-subtext' >The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
+                            <h1 className = 'mb-4 category-product-title product-title' style = {titleStyle}>XX99 Mark II Headphones</h1>
+                            <p className = 'mb-4 category-product-subtext' style = {productSubtextStyle}>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
 
                             <p style = {priceStyle} className = 'product-price mb-4'><strong>$ 2,999</strong> </p>
 
@@ -49,7 +69,7 @@ const ProductPage = () => {
                     <div className = 'col-lg-5'>
 
                         <div className = 'featured-right' style = {featuredRightContainerStyle}>
-                            <h1 className = 'mb-4' style = {featuresHeading}>IN THE BOX</h1>
+                            <h1 className = 'mb-4 in-box-heading' style = {featuresHeading}>IN THE BOX</h1>
                             <ul className = 'in-box-ul'>
                                 <li className = 'in-box-li'><span style = {boxNumberStyle} className = 'mr-3 in-box-number'>1x </span> Headphone Unit</li>
                                 <li className = 'in-box-li'><span style = {boxNumberStyle} className = 'mr-3 in-box-number'>2x </span> Replacement Earcups</li>
@@ -70,7 +90,7 @@ const ProductPage = () => {
 
                 <CategoriesSection />
 
-                <InformationSection />
+                <InformationSection /> 
                 </div>
         </>
     )
@@ -110,6 +130,11 @@ const priceStyle = {
 
 }
 
+const productSubtextStyle = {
+    opacity:'0.5',
+    fontSize:'15px'
+}
+
 const featuresHeading = {
     fontSize:'32px'
 }
@@ -119,7 +144,8 @@ const featuresText = {
     opacity:'0.5'
 }
 const inputStyle = {
-    width:'120px'
+    width:'120px',
+    height:'48px'
 }
 
 const featuredRightContainerStyle = {
