@@ -29,10 +29,10 @@ const Recommended = () => {
 
     return (
         
-        <div style = {containerStyle}>
-         <h1 className = 'text-center' style = {headingStyle}>YOU MAY ALSO LIKE</h1>
+        <div style = {containerStyle} className = 'recoomended-container'>
+         <h1 className = 'text-center' style = {headingStyle} className = 'recommended-heading'>YOU MAY ALSO LIKE</h1>
          <div className = 'row'>
-             <div className = 'col-lg-4 col-md-4 text-center'>
+             <div className = 'col-lg-4 col-md-4 text-center recommended-product-container'  >
                  <div className = 'recommended-image-container' style = {imageContainerStyle}>
                      <img src = {`${image1}`} className = 'h-100 w-100' style = {imageStyle} />
                  </div>
@@ -41,7 +41,7 @@ const Recommended = () => {
 
                  <button className = 'btn btn-primary btn-lg btn-light-custom'>SEE PRODUCT</button>
              </div>
-             <div className = 'col-lg-4 col-md-4 text-center'>
+             <div className = 'col-lg-4 col-md-4 text-center recommended-product-container' >
              <div className = 'recommended-image-container' style = {imageContainerStyle}>
                      <img src = {`${image2}`} className = 'h-100 w-100' style = {imageStyle} />
                  </div>
@@ -50,7 +50,7 @@ const Recommended = () => {
 
                  <button className = 'btn btn-primary btn-lg btn-light-custom'>SEE PRODUCT</button>
              </div>
-             <div className = 'col-lg-4 col-md-4 text-center'>
+             <div className = 'col-lg-4 col-md-4 text-center recommended-product-container' >
              <div className = 'recommended-image-container' style = {imageContainerStyle}>
                      <img src = {`${image3}`} className = 'h-100 w-100' style = {imageStyle} />
                  </div>

@@ -34,17 +34,17 @@ const ThreeImages = () => {
             <div className = 'col-lg-5 col-md-5 product-images-left-col' >
                 <div className = 'row h-100'>
                     <div className = 'col-lg-12  product-images-left-top'>
-                        <img className = 'w-100 h-100 img-fluid'style = {imageStyle} src = {`${image1}`} />
+                        <img className = ' img-fluid'style = {imageStyle} src = {`${image1}`} />
                     </div>
                     <div className = 'col-lg-12  product-images-left-bottom'>
-                    <img className = 'w-100 h-100 img-fluid pt-4' style = {imageStyle} src = {`${image2}`} />
+                    <img className = 'img-fluid mt-4' style = {imageStyle} src = {`${image2}`} />
 
                     </div>
                 </div>
             </div>
 
             <div className = 'col-lg-7 col-md-7 product-images-right-col'>
-                <img style = {imageStyle} src = {`${image3}`} className = 'h-100 w-100 img-fluid' />
+                <img style = {imageStyle} src = {`${image3}`} className = ' img-fluid three-images-3' />
 
             </div>
             
