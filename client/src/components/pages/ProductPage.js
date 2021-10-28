@@ -40,12 +40,12 @@ const ProductPage = () => {
                             <h1 className = 'mb-4 category-product-title product-title' style = {titleStyle}>XX99 Mark II Headphones</h1>
                             <p className = 'mb-4 category-product-subtext' style = {productSubtextStyle}>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
 
-                            <p style = {priceStyle} className = 'product-price mb-4'><strong>$ 2,999</strong> </p>
+                            <p style = {priceStyle} className = 'product-price mb-3'><strong>$ 2,999</strong> </p>
 
                             <div className = 'product-add-to-cart-container d-flex mt-2'>
-                                <input  className = 'mr-3' type = 'number'  style = {inputStyle}/>
+                                <input  className = 'mr-2' type = 'number'  style = {inputStyle}/>
 
-                             <button className = 'btn btn-lg btn-light-custom d-flex text-white category-product-btn'>ADD TO CART</button>
+                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn'>ADD TO CART</button>
                             </div>
                             
                         </div>

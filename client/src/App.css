@@ -285,6 +285,9 @@ a:hover {
       height: 362px !important;
       margin-top: 100px !important;
     }
+
+    .recommended-image-container {
+    }
 }
 
 /*Mobile breakpoint */
@@ -494,6 +497,21 @@ a:hover {
 
   .category-product-title {
     font-size: 28px !important;
+  }
+
+  /*Product page mobile styling */
+
+  .product-container {
+    text-align: left !important;
+  }
+
+  .product-add-to-cart-container {
+    align-items: center !important;
+  }
+
+  .featured-right {
+    align-items: flex-start !important;
+    margin-top: 90px !important;
   }
 
 
