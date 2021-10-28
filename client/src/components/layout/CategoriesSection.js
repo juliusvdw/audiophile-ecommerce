@@ -26,7 +26,7 @@ const CategoriesSection = () => {
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
                             <h5 style = {categoryHeaderStyle} className = 'categories-header'>SPEAKERS</h5>
-                            <Link to = 'category/speakers' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </Link>
+                            <Link to = '/category/speakers' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </Link>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ const CategoriesSection = () => {
 
                         <div className = 'home-category-text-container text-center'style = {categoryTextStyle}>
                             <h5 style = {categoryHeaderStyle} className = 'categories-header'>EARPHONES</h5>
-                            <Link to = 'category/earphones' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </Link>
+                            <Link to = '/category/earphones' className = 'category-link' style = {categoryLinkStyle}>SHOP <span style = {{color:'#d87d4a'}}>  {'>'}</span> </Link>
                         </div>
                     </div>
                 </div>
