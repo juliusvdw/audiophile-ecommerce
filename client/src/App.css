@@ -12,6 +12,8 @@ a:hover {
 }
 
 
+
+
 .btn-light-custom {
   background-color: #D87D4A;
   font-size: 13px;
@@ -86,6 +88,19 @@ a:hover {
 .category-link:hover{
   color:#D87D4A !important;
   opacity:1 !important
+}
+
+/*Product page styling */
+
+.in-box-ul {
+  list-style-type:none;
+  padding:0px;
+}
+
+.in-box-li {
+  margin-bottom: 15px;
+  font-size: 15px;
+  opacity: 50%;
 }
 
 /*Css for tablet breakpoints */
