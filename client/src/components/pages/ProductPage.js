@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ThreeImages from '../layout/productPage/ThreeImages'
+import Recommended from '../layout/productPage/Recommended'
 
 const ProductPage = () => {
     return (
@@ -61,6 +62,8 @@ const ProductPage = () => {
                 </div>
 
                 <ThreeImages />
+
+                <Recommended />
                 </div>
         </>
     )
