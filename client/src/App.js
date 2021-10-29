@@ -10,17 +10,20 @@ import ProductCategoryPage from './components/pages/ProductCategoryPage'
 import ProductPage from './components/pages/ProductPage'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import CartModal from './components/modals/CartModal'
+import Cart from './components/layout/Cart'
 
 
 
 function App() {
 
+  
+  //set cartShow state
+  const [cartShow, setCartShow] = useState(false)
 
   return (
     <div className="App">
       <Router>
-      <Navbar/>
+      <Navbar setCartShow = {setCartShow}/>
 
       <Switch>
 
@@ -31,6 +34,7 @@ function App() {
       </Switch>
 
       <Footer />
+      <Cart  cartShow = {cartShow}/>
       </Router>
       
     </div>
