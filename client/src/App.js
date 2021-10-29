@@ -1,5 +1,6 @@
 
 import './App.css';
+import React,{useState} from 'react';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
@@ -9,14 +10,19 @@ import ProductCategoryPage from './components/pages/ProductCategoryPage'
 import ProductPage from './components/pages/ProductPage'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import CartModal from './components/modals/CartModal'
 
 
 
 function App() {
+
+  //Set state for cart modal
+  const [cartModalShow, setCartModalShow] = useState(false);
+
   return (
     <div className="App">
       <Router>
-      <Navbar />
+      <Navbar setCartModalShow={setCartModalShow}/>
 
       <Switch>
 
@@ -27,6 +33,7 @@ function App() {
       </Switch>
 
       <Footer />
+      <CartModal show={cartModalShow} onHide={() => setCartModalShow(false)}/>
       </Router>
       
     </div>

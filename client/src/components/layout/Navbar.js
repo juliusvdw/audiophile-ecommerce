@@ -1,6 +1,6 @@
 import React from'react';
 
-const Navbar = () => {
+const Navbar = ({setCartModalShow}) => {
     return (
 
        
@@ -26,7 +26,7 @@ const Navbar = () => {
       </li>
     </ul>
   </div>
-  <div className = 'ml-auto'> <i className=" bi-cart "style = {{color:'white', fontSize:'24px'}} />
+  <div className = 'ml-auto'> <i className=" bi-cart link"style = {{color:'white', fontSize:'24px'}} onClick = {() => setCartModalShow(true)}/>
 </div>
   </div>
 </nav>
