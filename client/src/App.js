@@ -16,13 +16,11 @@ import CartModal from './components/modals/CartModal'
 
 function App() {
 
-  //Set state for cart modal
-  const [cartModalShow, setCartModalShow] = useState(false);
 
   return (
     <div className="App">
       <Router>
-      <Navbar setCartModalShow={setCartModalShow}/>
+      <Navbar/>
 
       <Switch>
 
@@ -33,7 +31,6 @@ function App() {
       </Switch>
 
       <Footer />
-      <CartModal show={cartModalShow} onHide={() => setCartModalShow(false)}/>
       </Router>
       
     </div>
