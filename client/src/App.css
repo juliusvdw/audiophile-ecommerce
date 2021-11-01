@@ -78,6 +78,9 @@ a:hover {
   background-color: #000000 !important;
   cursor: pointer;
 }
+#checkout-btn {
+  width: 100% !important;
+}
 
 /*Home hero section */
 #hero-section {
