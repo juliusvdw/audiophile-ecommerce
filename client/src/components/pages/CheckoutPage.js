@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CheckoutForm from '../layout/checkoutPage/CheckoutForm';
+import CheckoutSummary from '../layout/checkoutPage/CheckoutSummary';
 
 const CheckoutPage = () => {
     return (
@@ -12,8 +13,8 @@ const CheckoutPage = () => {
                    <div className = 'col-lg-8'>
                        <CheckoutForm />
                    </div>
-                   <div className = 'col-lg-8'>
-
+                   <div className = 'col-lg-4 '>
+                    <CheckoutSummary />
                    </div>
                </div>
 
@@ -27,7 +28,8 @@ const pageStyle = {
 }
 
 const rowStyle = {
-    marginTop:'100px'
+    marginTop:'100px',
+    marginBottom:'100px'
 }
 
 const containerStyle = {
