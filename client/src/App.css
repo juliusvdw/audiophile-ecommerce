@@ -290,7 +290,10 @@ a:hover {
       margin-top: 100px !important;
     }
 
-    .recommended-image-container {
+    /*Cart styling tablet */
+
+    #cart-container {
+      right:40px !important
     }
 }
 
@@ -542,6 +545,15 @@ a:hover {
 
   .recommended-product-container {
     margin-bottom:55px
+  }
+
+  /* Cart styling mobile*/
+
+  #cart-container {
+    left:50% !important;
+    transform: translate(-50%) !important;
+    right: 0 !important;
+    width: 90% !important;
   }
 
 
