@@ -14,6 +14,9 @@ import Footer from './components/layout/Footer'
 import Cart from './components/layout/cart/Cart'
 import ScrollToTop from './components/function/ScrollToTop';
 
+//Import context states
+import ProductsState from './context/products/ProductsState.js';
+
 
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
   
 
   return (
+
+    <ProductsState>
+
     <div className="App" >
       <Router>
         <ScrollToTop>
@@ -33,7 +39,7 @@ function App() {
       <Switch>
 
       <Route exact path = {'/'} render  = {(props) => <HomePage {...props} />}/>
-      <Route  path = {'/category/:category'} render  = {(props) => <ProductCategoryPage {...props} />}/>
+      <Route  exact path = {'/category/:category'} render  = {(props) => <ProductCategoryPage {...props} />}/>
       <Route  path = {'/product/:product'} render  = {(props) => <ProductPage {...props} />}/>
       <Route  path = {'/checkout'} render  = {(props) => <CheckoutPage {...props} />}/>
 
@@ -45,6 +51,8 @@ function App() {
       </Router>
       
     </div>
+
+    </ProductsState>
   );
 }
 
