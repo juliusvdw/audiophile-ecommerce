@@ -10,7 +10,7 @@ import ProductCategoryPage from './components/pages/ProductCategoryPage'
 import ProductPage from './components/pages/ProductPage'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import Cart from './components/layout/Cart'
+import Cart from './components/layout/cart/Cart'
 
 
 
