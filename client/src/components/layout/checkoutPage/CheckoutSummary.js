@@ -32,7 +32,7 @@ const CheckoutSummary = () => {
 const cartContainerStyle = {
    
     height:'488px',
-    right:'180px',
+    paddingTop:'25px',
     zIndex:'999',
     backgroundColor:'white',
     borderRadius:'8px',

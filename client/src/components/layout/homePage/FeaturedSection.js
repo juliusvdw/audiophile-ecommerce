@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
 
 
@@ -40,7 +41,7 @@ const FeaturedSection = () => {
                 <div id = 'first-product-text-container' style = {firstTextStyle}>
                     <h1 style = {firstHeadingStyle} className = 'mb-4 featured-product-header'> ZX9 SPEAKER</h1>
                     <p style = {firstSubtextStyle} className = 'featured-product-subtext'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                    <div id = 'featured-first-btn' className = 'btn btn-primary btn-lg btn-dark-custom d-flex' style = {firstBtnStyle}>SEE PRODUCT</div>
+                    <Link to = {'/product/zx9-speaker'}><div id = 'featured-first-btn' className = 'btn btn-primary btn-lg btn-dark-custom d-flex' style = {firstBtnStyle}>SEE PRODUCT</div> </Link>
                 </div>
                 
             </div>
@@ -49,7 +50,7 @@ const FeaturedSection = () => {
 
                 <div id = 'second-product-text-container' style = {secondTextStyle}>
                     <h1 style = {secondHeadingStyle}>ZX7 SPEAKER</h1>
-                    <div className = 'btn btn-primary btn-dark-outline-custom d-flex' style = {secondBtnStyle}>SEE PRODUCT</div>
+                    <Link to = {'/product/zx7-speaker'}><div className = 'btn btn-primary btn-dark-outline-custom d-flex' style = {secondBtnStyle}>SEE PRODUCT</div></Link>
 
                 </div>
                 <div id = 'second-product-image-container' >
@@ -65,7 +66,7 @@ const FeaturedSection = () => {
                     </div>
                     <div id = 'featured-third-text' className = 'col-lg-6 col-md-6 featured-third-box' style = {thirdTextStyle}>
                         <h1 id = 'featured-third-text-heading' style = {thirdHeadingStyle}>YX1 EARPHONES</h1>
-                        <div className = 'btn btn-primary btn-lg btn-dark-outline-custom d-flex' style = {thirdBtnStyle}>SEE PRODUCT</div>
+                       <Link to = {'/product/yx1-earphones'}> <div className = 'btn btn-primary btn-lg btn-dark-outline-custom d-flex' style = {thirdBtnStyle}>SEE PRODUCT</div></Link>
 
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
 
 
@@ -22,20 +23,20 @@ const Footer = () => {
 
                     {isTablet && 
                      <div id = 'footer-links-container ' className = 'd-flex w-100 text-left' style = {linksContainerTablet}> 
-                        <a  style = {linkStyle} className = 'link footer-link'>HOME</a>
-                        <a  style = {linkStyle} className = 'link footer-link'>HEADPHONES</a>
-                        <a  style = {linkStyle} className = 'link footer-link'>SPEAKERS</a>
-                        <a  style = {linkStyle} className = 'link footer-link'>EARPHONES</a>
+                         <Link to = {'/'}  style = {linkStyle} className = 'link footer-link'>HOME </Link>
+                         <Link to = {'/category/headphones'}  style = {linkStyle} className = 'link footer-link'>HEADPHONES </Link>
+                         <Link to = {'/category/speakers'}  style = {linkStyle} className = 'link footer-link'>SPEAKERS </Link>
+                         <Link to = {'/category/earphones'}  style = {linkStyle} className = 'link footer-link'>EARPHONES </Link>
                         
                      </div> 
                         }    
 
                     {isMobile && 
                      <div id = 'footer-links-container ' className = 'd-flex flex-column ' style = {linksContainerMobile}> 
-                        <a  style = {linkStyle} className = 'link footer-link'>HOME</a>
-                        <a  style = {linkStyle} className = 'link footer-link'>HEADPHONES</a>
-                        <a  style = {linkStyle} className = 'link footer-link'>SPEAKERS</a>
-                        <a  style = {linkStyle} className = 'link footer-link'>EARPHONES</a>
+                         <Link to = {'/'} style =  {linkStyle} className = 'link footer-link'>HOME</Link> 
+                        <Link to = {'/category/headphones'} style =  {linkStyle} className = 'link footer-link'>HEADPHONES</Link> 
+                        <Link to = {'/category/speakers'} style =  {linkStyle} className = 'link footer-link'>SPEAKERS</Link>
+                        <Link to = {'/category/earphones'} style =  {linkStyle} className = 'link footer-link'>EARPHONES</Link> 
                         
                      </div> 
                         }                   
@@ -48,10 +49,10 @@ const Footer = () => {
 
                  { isDesktop && <div id = 'footer-links-section w-100 ' style = {linksSectionStyle} >
                      <div className = 'd-flex flex-row w-100 text-right' > 
-                        <a style = {linkStyle} className = 'link'>HOME</a>
-                        <a style = {linkStyle} className = 'link'>HEADPHONES</a>
-                        <a style = {linkStyle} className = 'link'>SPEAKERS</a>
-                        <a style = {linkStyle} className = 'link'>EARPHONES</a>
+                     <Link to = {'/'} style =  {linkStyle} className = 'link footer-link'>HOME</Link> 
+                        <Link to = {'/category/headphones'} style =  {linkStyle} className = 'link footer-link'>HEADPHONES</Link> 
+                        <Link to = {'/category/speakers'} style =  {linkStyle} className = 'link footer-link'>SPEAKERS</Link>
+                        <Link to = {'/category/earphones'} style =  {linkStyle} className = 'link footer-link'>EARPHONES</Link> 
                         
                      </div>
 

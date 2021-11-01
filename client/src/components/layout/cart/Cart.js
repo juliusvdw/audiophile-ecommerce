@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import CartItem from './CartItem'
 
 const Cart = ({ cartShow, setCartShow}) => {
@@ -23,7 +23,7 @@ const Cart = ({ cartShow, setCartShow}) => {
                                 <p style = {totalPriceStyle} className = 'ml-auto'>$ 5,396</p>
                             </div>
 
-                            <dv className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn'>CHECKOUT</dv>
+                            <Link to = {'/checkout'}><div className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn' onClick = {() => setCartShow(false)}>CHECKOUT</div></Link>
                        </div>
             </div>
         )
