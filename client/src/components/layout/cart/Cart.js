@@ -10,7 +10,7 @@ const Cart = ({ cartShow, setCartShow}) => {
             <div clasName = 'jubmbotron' style = {cartContainerStyle} id = 'cart-container' >
 
                    <div className = 'd-flex mt-4 px-4'>
-                     <h3 style = {headingStyle}>CART(3)</h3> <span className = 'ml-auto' onClick = {() => setCartShow(false)}>X</span>
+                     <h3 style = {headingStyle}>CART(3)</h3> <span id = 'cart-close' className = 'ml-auto' onClick = {() => setCartShow(false)}>X</span>
                    </div> 
 
                        <CartItem />

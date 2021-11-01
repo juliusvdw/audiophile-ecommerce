@@ -82,6 +82,11 @@ a:hover {
   width: 100% !important;
 }
 
+#cart-close:hover {
+  color: #D87D4A;
+  cursor: pointer;
+}
+
 /*Home hero section */
 #hero-section {
   overflow: hidden;
