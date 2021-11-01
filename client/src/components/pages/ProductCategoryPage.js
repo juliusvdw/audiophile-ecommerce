@@ -1,19 +1,22 @@
-import React,{useEffect} from 'react';
-import db from '../../config/firebase';
-import { onSnapshot, collection } from 'firebase/firestore';
+import React,{useEffect, useContext} from 'react';
 
 import CategoryProducts from '../layout/categoryPage/CategoryProducts';
 import CategoriesSection from '../layout/CategoriesSection';
 import InformationSection from '../layout/InformationSection';
 
+//Import context
+import ProductsContext from '../../context/products/productsContext';
+
 
 const CategoryPage = (props) => {
 
+    //Init context and destructure needed logic
+    const productsContext = useContext(ProductsContext)
+    const {getProductsByCategory} = productsContext;
+
     useEffect(() => {
-        onSnapshot(collection(db, 'product'), (snapshot) => {
-            console.log(snapshot.docs.map((doc) => doc.data()))
-        })
-    }, [])
+        getProductsByCategory(props.match.params.category)
+    },[])
 
 return (
     <>
