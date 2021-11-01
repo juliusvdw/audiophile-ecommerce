@@ -1,10 +1,14 @@
 import React from 'react'
 
-const Cart = ({ cartShow}) => {
+const Cart = ({ cartShow, setCartShow}) => {
+
+    
     if(cartShow) {
         return (
-            <div clasName = 'jubmbotron' style = {cartContainerStyle}>
-                    <h1>Test</h1>
+            <div clasName = 'jubmbotron' style = {cartContainerStyle} id = 'cart-container' >
+                   <div className = 'd-flex'>
+                   <h3>Cart(3)</h3> <span className = 'ml-auto' onClick = {() => setCartShow(false)}>X</span>
+                       </div> 
             </div>
         )
     }

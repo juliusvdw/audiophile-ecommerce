@@ -1,6 +1,8 @@
 import React from'react';
 
-const Navbar = ({setCartShow}) => {
+const Navbar = ({setCartShow, cartShow}) => {
+
+
     return (
 
        
@@ -26,7 +28,7 @@ const Navbar = ({setCartShow}) => {
       </li>
     </ul>
   </div>
-  <div className = 'ml-auto'> <i className=" bi-cart link"style = {{color:'white', fontSize:'24px'}} onClick = {() => setCartShow(true)}/>
+  <div className = 'ml-auto'> <i className=" bi-cart link"style = {{color:'white', fontSize:'24px'}} onClick = {() => setCartShow(true)} />
 </div>
   </div>
 </nav>

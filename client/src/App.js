@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Navbar setCartShow = {setCartShow}/>
+      <Navbar cartShow = {cartShow} setCartShow = {setCartShow}/>
 
       <Switch>
 
@@ -34,7 +34,7 @@ function App() {
       </Switch>
 
       <Footer />
-      <Cart  cartShow = {cartShow}/>
+      <Cart  cartShow = {cartShow} setCartShow = {setCartShow}/>
       </Router>
       
     </div>
