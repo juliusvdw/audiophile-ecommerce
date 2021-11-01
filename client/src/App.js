@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import HomePage from './components/pages/HomePage'
 import ProductCategoryPage from './components/pages/ProductCategoryPage'
 import ProductPage from './components/pages/ProductPage'
+import CheckoutPage from './components/pages/CheckoutPage'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Cart from './components/layout/cart/Cart'
@@ -16,12 +17,14 @@ import Cart from './components/layout/cart/Cart'
 
 function App() {
 
-  
+
   //set cartShow state
   const [cartShow, setCartShow] = useState(false)
 
+  
+
   return (
-    <div className="App">
+    <div className="App" >
       <Router>
       <Navbar cartShow = {cartShow} setCartShow = {setCartShow}/>
 
@@ -30,6 +33,7 @@ function App() {
       <Route exact path = {'/'} render  = {(props) => <HomePage {...props} />}/>
       <Route  path = {'/category/:category'} render  = {(props) => <ProductCategoryPage {...props} />}/>
       <Route  path = {'/product/:product'} render  = {(props) => <ProductPage {...props} />}/>
+      <Route  path = {'/checkout'} render  = {(props) => <CheckoutPage {...props} />}/>
 
       </Switch>
 
