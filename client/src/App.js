@@ -12,6 +12,7 @@ import CheckoutPage from './components/pages/CheckoutPage'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Cart from './components/layout/cart/Cart'
+import ScrollToTop from './components/function/ScrollToTop';
 
 
 
@@ -26,6 +27,7 @@ function App() {
   return (
     <div className="App" >
       <Router>
+        <ScrollToTop>
       <Navbar cartShow = {cartShow} setCartShow = {setCartShow}/>
 
       <Switch>
@@ -39,6 +41,7 @@ function App() {
 
       <Footer />
       <Cart  cartShow = {cartShow} setCartShow = {setCartShow}/>
+      </ScrollToTop>
       </Router>
       
     </div>
