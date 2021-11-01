@@ -5,12 +5,16 @@ import {collection, getDocs, where, query} from 'firebase/firestore'
 
 import ProductsContext from "./productsContext";
 import productsReducer from "./productsReducer";
-import { GET_ALL_PRODUCTS } from '../Types';
+import { 
+    GET_ALL_PRODUCTS ,
+    SET_ACTIVE_CATEGORY
+
+} from '../Types';
 
 const ProductsState = (props) => {
     const initialState = {
         products:null,
-
+        activeCategory:null,
     }
 
     const [state,dispatch] = useReducer(productsReducer,initialState)
@@ -42,12 +46,18 @@ const ProductsState = (props) => {
 
     }
 
+    //Set active category
+    const setActiveCategory = (category) => {
+        dispatch({type: SET_ACTIVE_CATEGORY , payload:category})
+    }
+
     return (
         <ProductsContext.Provider
           value={{
             products:state.products,
             getAllProducts,
             getProductsByCategory,
+            setActiveCategory,
           }}
         >
           {props.children}

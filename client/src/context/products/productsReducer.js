@@ -1,6 +1,7 @@
 
 import {
 GET_ALL_PRODUCTS,
+SET_ACTIVE_CATEGORY
 } from '../Types'
 
 export default (state,action) => {
@@ -9,6 +10,11 @@ export default (state,action) => {
             return {
                 ...state,
                 products:action.payload
+            }
+        case SET_ACTIVE_CATEGORY:
+            return {
+                ...state,
+                activeCategory:`${action.payload}`
             }
 
         default:

@@ -12,7 +12,7 @@ const CategoryPage = (props) => {
 
     //Init context and destructure needed logic
     const productsContext = useContext(ProductsContext)
-    const {getProductsByCategory} = productsContext;
+    const {getProductsByCategory,setActiveCategory} = productsContext;
 
     useEffect(() => {
         getProductsByCategory(props.match.params.category)
