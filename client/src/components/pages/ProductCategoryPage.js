@@ -1,12 +1,20 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import db from '../../config/firebase';
+import { onSnapshot, collection } from 'firebase/firestore';
 
 import CategoryProducts from '../layout/categoryPage/CategoryProducts';
 import CategoriesSection from '../layout/CategoriesSection';
 import InformationSection from '../layout/InformationSection';
 
+
 const CategoryPage = (props) => {
 
-    console.log(props.match.params.category)
+    useEffect(() => {
+        onSnapshot(collection(db, 'product'), (snapshot) => {
+            console.log(snapshot.docs.map((doc) => doc.data()))
+        })
+    }, [])
+
 return (
     <>
     <div id = 'category-page-header-container' style = {headerContainerStyle}>
