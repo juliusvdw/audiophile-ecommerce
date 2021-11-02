@@ -7,7 +7,8 @@ import ProductsContext from "./productsContext";
 import productsReducer from "./productsReducer";
 import { 
     GET_ALL_PRODUCTS ,
-    SET_ACTIVE_CATEGORY
+    SET_ACTIVE_CATEGORY,
+    SET_ACTIVE_CATEGORY_PRODUCTS
 
 } from '../Types';
 
@@ -15,6 +16,7 @@ const ProductsState = (props) => {
     const initialState = {
         products:null,
         activeCategory:null,
+        activeCategoryProducts:null,
     }
 
     const [state,dispatch] = useReducer(productsReducer,initialState)
@@ -42,8 +44,9 @@ const ProductsState = (props) => {
         const data = await getDocs(categoryCollection)
         const products = data.docs.map((doc) => ({...doc.data(), id:doc.id}));
 
-        console.log(products)
+        dispatch({type:SET_ACTIVE_CATEGORY_PRODUCTS, payload:products})
 
+        console.log(products)
     }
 
     //Set active category
@@ -55,6 +58,7 @@ const ProductsState = (props) => {
         <ProductsContext.Provider
           value={{
             products:state.products,
+            activeCategoryProducts : state.activeCategoryProducts,
             getAllProducts,
             getProductsByCategory,
             setActiveCategory,

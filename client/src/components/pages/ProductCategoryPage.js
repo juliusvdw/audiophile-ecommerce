@@ -12,9 +12,10 @@ const CategoryPage = (props) => {
 
     //Init context and destructure needed logic
     const productsContext = useContext(ProductsContext)
-    const {getProductsByCategory,setActiveCategory} = productsContext;
+    const {getProductsByCategory,setActiveCategory, activeCategoryProducts} = productsContext;
 
     useEffect(() => {
+        setActiveCategory(props.match.params.category)
         getProductsByCategory(props.match.params.category)
     },[])
 
@@ -23,7 +24,7 @@ return (
     <div id = 'category-page-header-container' style = {headerContainerStyle}>
         <h1 style = {headerStyle}>{props.match.params.category.toUpperCase()}</h1>
 
-    </div>
+  </div>
 
     <div className = 'container'>
                 < CategoryProducts />
