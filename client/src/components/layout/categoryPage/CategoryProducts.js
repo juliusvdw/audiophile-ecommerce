@@ -36,9 +36,9 @@ const CategoryProductLayout = (props) => {
                   other = product.others,
                   price = product.price;  
 
-                  if (order % 2 === 0) return <CategoryProductRight productData = {category,description,features,gallery,id,image,includes,name,isNew,other,price}/>
+                  if (order % 2 === 0) return <CategoryProductRight productData = {{category,description,features,gallery,id,image,includes,name,isNew,other,price}}/>
 
-                  return <CategoryProductLeft productData = {category,description,features,gallery,id,image,includes,name,isNew,other,price}/>
+                  return <CategoryProductLeft productData = {{category,description,features,gallery,id,image,includes,name,isNew,other,price}}/>
             })}
         </>
     )
