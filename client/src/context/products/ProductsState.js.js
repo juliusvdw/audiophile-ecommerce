@@ -39,7 +39,6 @@ const ProductsState = (props) => {
 
     //Get products by category
     const getProductsByCategory = async (category) => {
-        console.log(category)
         const categoryCollection = query(collection(db, "product"), where("category", "==", `${category}`));
         const data = await getDocs(categoryCollection)
         const products = data.docs.map((doc) => ({...doc.data(), id:doc.id}));
@@ -59,8 +58,10 @@ const ProductsState = (props) => {
           value={{
             products:state.products,
             activeCategoryProducts : state.activeCategoryProducts,
+            activeCategory: state.activeCategory,
             getAllProducts,
             getProductsByCategory,
+            
             setActiveCategory,
           }}
         >
