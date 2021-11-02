@@ -1,165 +1,72 @@
-import React from 'react';
+import React, {useEffect, useContext} from 'react';
 import { useMediaQuery } from 'react-responsive';
 
+import Product from '../layout/productPage/Product'
+import FeaturesSection from '../layout/productPage/FeaturesSection'
 import ThreeImages from '../layout/productPage/ThreeImages'
 import Recommended from '../layout/productPage/Recommended'
 import CategoriesSection from '../layout/CategoriesSection'
 import InformationSection from '../layout/InformationSection'
 import CategoryProductRight from '../layout/categoryPage/CategoryProductRight';
 
-const ProductPage = () => {
+import ProductsContext from '../../context/products/productsContext';
 
-     //Set media query for reposnisve size 
-     const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 780 })
-     const isDesktop  = useMediaQuery({ minWidth: 1024 })
-     const isMobile  = useMediaQuery({ maxWidth: 480 })
+const ProductPage = (props) => {
 
-     //Determine which image to display for profuct based on screen size
-     let productImage;
+    //Init context and destructure needed logic
+    const productsContext = useContext(ProductsContext)
+    const {getSingleProduct, singleProduct } = productsContext;
 
-     if(isDesktop){
-        productImage = '/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg'
-     } else if (isTablet){
-        productImage = '/assets/product-xx99-mark-two-headphones/tablet/image-product.jpg'
-     }else {
-        productImage = '/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg'
-     }
+    useEffect(() => {
+        getSingleProduct(props.match.params.product)
+    }, [])
 
-
-
+     
     return (
         <>
         <div className = 'container'>
-         <div id = 'category-product-row' className = 'row' style = {rowStyle}>
-                    <div className = 'col-lg-6 col-md-5'>
-                        <img src = {`${productImage}`} className = 'img-fluid h-100' style = {imageStyle}/>
-                    </div>
-                    <div className = 'col-lg-6 col-md-7' style = {textContainerStyle}>
-                        <div className = 'category-product-text-container product-container' style = {textStyle}>
-                            <h6  className = 'mb-3' style = {newProductStyle} >NEW PRODUCT</h6>
-                            <h1 className = 'mb-4 category-product-title product-title' style = {titleStyle}>XX99 Mark II Headphones</h1>
-                            <p className = 'mb-4 category-product-subtext' style = {productSubtextStyle}>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
 
-                            <p style = {priceStyle} className = 'product-price mb-3'><strong>$ 2,999</strong> </p>
+                {singleProduct != null && 
+                <>
+                <Product productData = {{
+                  category : singleProduct[0],
+                  order : singleProduct[0].order,
+                  description : singleProduct[0].description,
+                  id : singleProduct[0].id,
+                  image : singleProduct[0].image,
+                  name : singleProduct[0].name,
+                  isNew : singleProduct[0].new,
+                  price : singleProduct[0].price }}/> 
 
-                            <div className = 'product-add-to-cart-container d-flex mt-2'>
-                                <input  className = 'mr-2' type = 'number'  style = {inputStyle}/>
+                  <FeaturesSection productData = {{
+                    features :  singleProduct[0].features,
+                    includes : singleProduct[0].includes,
 
-                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn'>ADD TO CART</button>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+                  }}/>
+                  
+                  <ThreeImages productData = {{
+                      gallery : singleProduct[0].gallery,
+                  }}/>
 
-                <div className = 'features-section'>
-                    <div className = 'row'>
+                <Recommended productData = {{
+                  others : singleProduct[0].others,
 
-                    <div className = 'col-lg-7'>
-
-                        <div className = 'featured-left'>
-                            <h1 className = 'features-heading mb-4' style = {featuresHeading}>FEATURES</h1>
-                            <p className = 'featured-subtext' style = {featuresText}>Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.
-                           </p>
-                            <p className = 'featured-subtext' style = {featuresText}>The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.
-                           </p>
-                        </div>
-                    </div>
-
-                    <div className = 'col-lg-5'>
-
-                        <div className = 'featured-right' style = {featuredRightContainerStyle}>
-                            <h1 className = 'mb-4 in-box-heading' style = {featuresHeading}>IN THE BOX</h1>
-                            <ul className = 'in-box-ul'>
-                                <li className = 'in-box-li'><span style = {boxNumberStyle} className = 'mr-3 in-box-number'>1x </span> Headphone Unit</li>
-                                <li className = 'in-box-li'><span style = {boxNumberStyle} className = 'mr-3 in-box-number'>2x </span> Replacement Earcups</li>
-                                <li className = 'in-box-li'><span style = {boxNumberStyle} className = 'mr-3 in-box-number'>1x </span>User Manual </li>
-                                <li className = 'in-box-li'><span style = {boxNumberStyle} className = 'mr-3 in-box-number'>1x </span> 3.5mm Audio Jack</li>
-                                <li className = 'in-box-li'><span style = {boxNumberStyle} className = 'mr-3 in-box-number'>1x </span> Travel Bag</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    </div>
-
-                </div>
-
-                <ThreeImages />
-
-                <Recommended />
+                }}/>
 
                 <CategoriesSection />
 
                 <InformationSection /> 
+                </>
+
+                  }
+
                 </div>
         </>
     )
 }
 
-const rowStyle = {
-    minHeight:'560px',
-    marginTop:'160px',
-    marginBottom:'160px'
-}
 
-const imageStyle = {
-    borderRadius:'8px'
-}
 
-const textContainerStyle = {
-    display:'flex',
-    alignItems:'center',
-    justifyContent:'center'
-}
-const textStyle = {
-    paddingLeft:'125px'
-}
-
-const newProductStyle = {
-    letterSpacing:'10px',
-    fontSize:'14px',
-    color:'#D87D4A'
-}
-const titleStyle = {
-    letterSpacing:'1.5px',
-    fontSize:'40px',
-    fontWeight:'bold'
-}
-
-const priceStyle = {
-
-}
-
-const productSubtextStyle = {
-    opacity:'0.5',
-    fontSize:'15px'
-}
-
-const featuresHeading = {
-    fontSize:'32px'
-}
-const featuresText = {
-    fontSize:'15px',
-    lineHeight:'25px',
-    opacity:'0.5'
-}
-const inputStyle = {
-    width:'120px',
-    height:'48px'
-}
-
-const featuredRightContainerStyle = {
-    display:'flex',
-    flexDirection:'column',
-    alignItems:'center'
-}
-
-const boxNumberStyle = {
-    color:'#d87d4a',
-    fontWeight:'bold',
-    opacity:'1'
-    
-}
 
 
 export default ProductPage;
