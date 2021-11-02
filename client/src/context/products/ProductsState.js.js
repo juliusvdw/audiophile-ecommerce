@@ -8,7 +8,8 @@ import productsReducer from "./productsReducer";
 import { 
     GET_ALL_PRODUCTS ,
     SET_ACTIVE_CATEGORY,
-    SET_ACTIVE_CATEGORY_PRODUCTS
+    SET_ACTIVE_CATEGORY_PRODUCTS,
+    SET_SINGLE_PRODUCT
 
 } from '../Types';
 
@@ -17,6 +18,7 @@ const ProductsState = (props) => {
         products:null,
         activeCategory:null,
         activeCategoryProducts:null,
+        singleProduct:null,
     }
 
     const [state,dispatch] = useReducer(productsReducer,initialState)
@@ -48,8 +50,24 @@ const ProductsState = (props) => {
         console.log(products)
     }
 
+    //Get single product 
+    const getSingleProduct = async (productId) => {
+        const singleProduct = query(collection(db, "product"), where("slug", "==", `${productId}`));
+        const data = await getDocs(singleProduct);
+        const product = data.docs.map((doc) => ({...doc.data(), id:doc.id}));
+        console.log(product)
+
+        dispatch({type:SET_SINGLE_PRODUCT, payload:product})
+
+    }
+
+    //Set single product 
+    const setSingleProduct = (productId) => {
+        dispatch({type:SET_SINGLE_PRODUCT, payload:productId})
+    }
+
     //Set active category
-    const setActiveCategory = (category) => {
+    const setActiveCategory =  (category) => {
         dispatch({type: SET_ACTIVE_CATEGORY , payload:category})
     }
 
@@ -59,10 +77,11 @@ const ProductsState = (props) => {
             products:state.products,
             activeCategoryProducts : state.activeCategoryProducts,
             activeCategory: state.activeCategory,
+            singleProduct:state.singleProduct,
             getAllProducts,
             getProductsByCategory,
-            
             setActiveCategory,
+            getSingleProduct
           }}
         >
           {props.children}
