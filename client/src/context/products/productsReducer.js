@@ -3,7 +3,8 @@ import {
 GET_ALL_PRODUCTS,
 SET_ACTIVE_CATEGORY,
 SET_ACTIVE_CATEGORY_PRODUCTS,
-SET_SINGLE_PRODUCT
+SET_SINGLE_PRODUCT,
+SET_PRODUCT_LOADING
 } from '../Types'
 
 export default (state,action) => {
@@ -29,6 +30,12 @@ export default (state,action) => {
             return {
                 ...state,
                 singleProduct:action.payload
+                
+            }
+        case SET_PRODUCT_LOADING:
+            return {
+                ...state,
+                loading:action.payload
                 
             }
 
