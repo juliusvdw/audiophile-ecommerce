@@ -14,11 +14,11 @@ const CategoryProductLayout = (props) => {
 
     //Init context and destructure needed logic
     const productsContext = useContext(ProductsContext)
-    const {activeCategoryProducts, activeCategory} = productsContext;
+    const {activeCategoryProducts, activeCategory,loading } = productsContext;
 
   
 
- if (activeCategoryProducts != null && activeCategory === props.category ) {
+ if (activeCategoryProducts != null && activeCategory === props.category && !loading ) {
     return (
         <>
             
