@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CategoryProductLeft = ({productData}) => {
 
@@ -14,7 +15,7 @@ const CategoryProductLeft = ({productData}) => {
                             { productData.isNew && <h6  className = 'mb-3' style = {newProductStyle} >NEW PRODUCT</h6>} 
                             <h1 className = 'mb-4 category-product-title' style = {titleStyle}>{productData.name}</h1>
                             <p className = 'mb-4 category-product-subtext' style = {subTextStyle}>{productData.description}</p>
-                            <div className = 'btn btn-lg btn-light-custom d-flex text-white category-product-btn'>SEE PRODUCT</div>
+                            <Link to = {`/product/${productData.slug}`}><div className = 'btn btn-lg btn-light-custom d-flex text-white category-product-btn'>SEE PRODUCT</div> </Link>
                         </div>
                     </div>
                 </div>

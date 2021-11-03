@@ -34,11 +34,12 @@ const CategoryProductLayout = (props) => {
                   name = product.name,
                   isNew = product.new,
                   other = product.others,
-                  price = product.price;  
+                  price = product.price,
+                  slug = product.slug
 
-                  if (order % 2 === 0) return <CategoryProductRight productData = {{category,description,features,gallery,id,image,includes,name,isNew,other,price}}/>
+                  if (order % 2 === 0) return <CategoryProductRight productData = {{category,description,features,gallery,id,image,includes,name,isNew,other,price,slug}}/>
 
-                  return <CategoryProductLeft productData = {{category,description,features,gallery,id,image,includes,name,isNew,other,price}}/>
+                  return <CategoryProductLeft productData = {{category,description,features,gallery,id,image,includes,name,isNew,other,price,slug}}/>
             })}
         </>
     )
