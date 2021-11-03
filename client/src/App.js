@@ -40,7 +40,7 @@ function App() {
 
       <Route exact path = {'/'} render  = {(props) => <HomePage {...props} />}/>
       <Route  exact path = {'/category/:category'} render  = {(props) => <ProductCategoryPage {...props} key={props.match.params.category}/>}/>
-      <Route  path = {'/product/:product'} render  = {(props) => <ProductPage {...props} key={props.match.params.category}/>}/>
+      <Route  exact path = {'/product/:product'} render  = {(props) => <ProductPage {...props} key={props.match.params.product}/>}/>
       <Route  path = {'/checkout'} render  = {(props) => <CheckoutPage {...props} />}/>
 
       </Switch>
