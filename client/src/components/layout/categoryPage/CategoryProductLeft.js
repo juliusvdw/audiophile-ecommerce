@@ -1,19 +1,19 @@
 import React from 'react';
 
-const CategoryProductLeft = (props) => {
+const CategoryProductLeft = ({productData}) => {
 
-    console.log(props.productData)
+    console.log(productData)
     return (
             <> 
                 <div id = 'category-product-row' className = 'row' style = {rowStyle}>
                     <div className = 'col-lg-6'>
-                        <img src = {`${props.productData.image.desktop}`} className = 'img-fluid' style = {imageStyle}/>
+                        <img src = {`${productData.image.desktop}`} className = 'img-fluid' style = {imageStyle}/>
                     </div>
                     <div className = 'col-lg-6' style = {textContainerStyle}>
                         <div className = 'category-product-text-container' style = {textStyle}>
-                            { props.productData.isNew && <h6  className = 'mb-3' style = {newProductStyle} >NEW PRODUCT</h6>} 
-                            <h1 className = 'mb-4 category-product-title' style = {titleStyle}>{props.productData.name}</h1>
-                            <p className = 'mb-4 category-product-subtext' style = {subTextStyle}>{props.productData.description}</p>
+                            { productData.isNew && <h6  className = 'mb-3' style = {newProductStyle} >NEW PRODUCT</h6>} 
+                            <h1 className = 'mb-4 category-product-title' style = {titleStyle}>{productData.name}</h1>
+                            <p className = 'mb-4 category-product-subtext' style = {subTextStyle}>{productData.description}</p>
                             <div className = 'btn btn-lg btn-light-custom d-flex text-white category-product-btn'>SEE PRODUCT</div>
                         </div>
                     </div>
