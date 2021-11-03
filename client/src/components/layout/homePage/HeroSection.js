@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
 
 
@@ -28,7 +29,7 @@ const HeroSection = ()=> {
                 <p style = {heroLightHeading} className = 'mb-3'>NEW PRODUCT</p>
                 <h1 id = 'hero-heading' style = {heroProductHeading} className = 'mb-3'> XX99 MARK 11 HEADPHONES</h1>
                 <p style = {heroSubtextStyle} id = 'hero-subtext'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-                <div className = 'btn btn-primary btn-lg btn-light-custom d-flex' id = 'hero-btn'>SEE PRODUCT </div>
+                <Link to = {'product/xx99-mark-one-headphones'}><div className = 'btn btn-primary btn-lg btn-light-custom d-flex' id = 'hero-btn'>SEE PRODUCT </div></Link>
 
             </div>
 
