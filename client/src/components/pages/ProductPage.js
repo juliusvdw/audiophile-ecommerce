@@ -7,7 +7,7 @@ import ThreeImages from '../layout/productPage/ThreeImages'
 import Recommended from '../layout/productPage/Recommended'
 import CategoriesSection from '../layout/CategoriesSection'
 import InformationSection from '../layout/InformationSection'
-import CategoryProductRight from '../layout/categoryPage/CategoryProductRight';
+import CategoryLeftLoading from '../layout/categoryPage/CategoryLeftLoading';
 
 import ProductsContext from '../../context/products/productsContext';
 
@@ -63,7 +63,14 @@ const ProductPage = (props) => {
                     </div>
             </>
         )
-    } else {return <h1>Loading</h1>}
+    } else {
+      return (
+        <div className = 'container'>
+          
+       <CategoryLeftLoading />
+
+       </div> )
+    }
 }
 
 

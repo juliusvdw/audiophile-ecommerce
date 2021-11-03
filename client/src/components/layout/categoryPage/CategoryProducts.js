@@ -2,6 +2,7 @@ import React,{useContext, useEffect} from 'react'
 
 import CategoryProductLeft from './CategoryProductLeft'
 import CategoryProductRight from './CategoryProductRight'
+import CategoryLeftLoading from './CategoryLeftLoading'
 
 //Import context
 import ProductsContext from '../../../context/products/productsContext';
@@ -45,7 +46,7 @@ const CategoryProductLayout = (props) => {
     )
  } else {
      return (
-        <h1>Loading</h1>
+        <CategoryLeftLoading />
      )
  }
     
