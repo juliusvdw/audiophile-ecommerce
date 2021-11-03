@@ -15,7 +15,7 @@ const ProductPage = (props) => {
 
     //Init context and destructure needed logic
     const productsContext = useContext(ProductsContext)
-    const {getSingleProduct, singleProduct,loading } = productsContext;
+    const {getSingleProduct, singleProduct,loading, setSingleProduct } = productsContext;
 
     useEffect(() => {
         getSingleProduct(props.match.params.product)
@@ -31,7 +31,6 @@ const ProductPage = (props) => {
                     <>
                     <Product productData = {{
                       category : singleProduct[0],
-                      order : singleProduct[0].order,
                       description : singleProduct[0].description,
                       id : singleProduct[0].id,
                       image : singleProduct[0].image,
