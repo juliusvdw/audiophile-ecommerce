@@ -1,7 +1,15 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
-const Recommended = () => {
+//Import context
+import ProductsContext from '../../../context/products/productsContext';
+
+const Recommended = ({productData}) => {
+
+    
+    const productsContext = useContext(ProductsContext)
+    const {setSingleProduct} = productsContext;
 
     //Set media query for reposnisve size 
     const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 780 })
@@ -9,23 +17,17 @@ const Recommended = () => {
     const isMobile  = useMediaQuery({ maxWidth: 480 })
 
     //Determine which image to load based on device size 
-    let image1;
-    let image2;
-    let image3;
+    // let device;
+    
 
-    if(isDesktop) {
-        image1 = '/assets/shared/desktop/image-xx59-headphones.jpg'
-        image2 = '/assets/shared/desktop/image-xx59-headphones.jpg'
-        image3 = '/assets/shared/desktop/image-xx59-headphones.jpg'
-    }else if(isTablet){
-        image1 = '/assets/shared/tablet/image-xx59-headphones.jpg'
-        image2 = '/assets/shared/tablet/image-xx59-headphones.jpg'
-        image3 = '/assets/shared/tablet/image-xx59-headphones.jpg'
-    } else {
-        image1 = '/assets/shared/mobile/image-xx59-headphones.jpg'
-        image2 = '/assets/shared/mobile/image-xx59-headphones.jpg'
-        image3 = '/assets/shared/mobile/image-xx59-headphones.jpg'
-    }
+    // if(isDesktop) {
+    //     device = desktop;
+        
+    // }else if(isTablet){
+    //     device = tablet;
+    // } else {
+    //     device = mobile
+    // }
 
     return (
         
@@ -34,30 +36,30 @@ const Recommended = () => {
          <div className = 'row'>
              <div className = 'col-lg-4 col-md-4 text-center recommended-product-container'  >
                  <div className = 'recommended-image-container' style = {imageContainerStyle}>
-                     <img src = {`${image1}`} className = 'h-100 w-100' style = {imageStyle} />
+                     <img src = {`${productData.others[0].image.desktop}`} className = 'h-100 w-100' style = {imageStyle} />
                  </div>
 
-                 <h1 style = {titleStyle} className = 'mt-4 mb-4'>XX99 MARK II</h1>
+                 <h1 style = {titleStyle} className = 'mt-4 mb-4'>{productData.others[0].name}</h1>
 
-                 <button className = 'btn btn-primary btn-lg btn-light-custom'>SEE PRODUCT</button>
+                 <Link to = {`${productData.others[0].slug}`}><button className = 'btn btn-primary btn-lg btn-light-custom' >SEE PRODUCT</button></Link>
              </div>
              <div className = 'col-lg-4 col-md-4 text-center recommended-product-container' >
              <div className = 'recommended-image-container' style = {imageContainerStyle}>
-                     <img src = {`${image2}`} className = 'h-100 w-100' style = {imageStyle} />
+                     <img src = {`${productData.others[1].image.desktop}`} className = 'h-100 w-100' style = {imageStyle} />
                  </div>
 
-                 <h1 style = {titleStyle} className = 'mt-4 mb-4'>XX99 MARK II</h1>
+                 <h1 style = {titleStyle} className = 'mt-4 mb-4'>{productData.others[1].name}</h1>
 
-                 <button className = 'btn btn-primary btn-lg btn-light-custom'>SEE PRODUCT</button>
+                 <Link to = {`${productData.others[1].slug}`} ><button className = 'btn btn-primary btn-lg btn-light-custom' >SEE PRODUCT</button></Link>
              </div>
              <div className = 'col-lg-4 col-md-4 text-center recommended-product-container' >
              <div className = 'recommended-image-container' style = {imageContainerStyle}>
-                     <img src = {`${image3}`} className = 'h-100 w-100' style = {imageStyle} />
+                     <img src = {`${productData.others[2].image.desktop}`} className = 'h-100 w-100' style = {imageStyle} />
                  </div>
 
-                 <h1 style = {titleStyle} className = 'mt-4 mb-4'>XX99 MARK II</h1>
+                 <h1 style = {titleStyle} className = 'mt-4 mb-4'>{productData.others[2].name}</h1>
 
-                 <button className = 'btn btn-primary btn-lg btn-light-custom'>SEE PRODUCT</button>
+                 <Link to = {`${productData.others[2].slug}`}><button className = 'btn btn-primary btn-lg btn-light-custom' >SEE PRODUCT</button></Link>
              </div>
          </div>
         </div>

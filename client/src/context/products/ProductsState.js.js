@@ -101,7 +101,8 @@ const ProductsState = (props) => {
             getAllProducts,
             getProductsByCategory,
             setActiveCategory,
-            getSingleProduct
+            getSingleProduct,
+            setSingleProduct
           }}
         >
           {props.children}
