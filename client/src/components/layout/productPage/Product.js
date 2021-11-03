@@ -22,7 +22,7 @@ const Product = ({productData}) => {
     return (
         <div id = 'category-product-row' className = 'row' style = {rowStyle}>
                     <div className = 'col-lg-6 col-md-5'>
-                        <img src = {`${productImage}`} className = 'img-fluid h-100' style = {imageStyle}/>
+                        <img src = {`${productData.image.desktop}`} className = 'img-fluid h-100' style = {imageStyle}/>
                     </div>
                     <div className = 'col-lg-6 col-md-7' style = {textContainerStyle}>
                         <div className = 'category-product-text-container product-container' style = {textStyle}>
