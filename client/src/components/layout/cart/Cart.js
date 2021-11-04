@@ -1,33 +1,40 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Link } from 'react-router-dom'
 import CartItem from './CartItem'
 
+//Import context
+import CartContext from '../../../context/cart/cartContext'
+
 const Cart = ({ cartShow, setCartShow}) => {
+
+    const cartContext = useContext(CartContext);
+    const {products} = cartContext;
+
+    
 
     
     if(cartShow) {
-        return (
-            <div clasName = 'jubmbotron' style = {cartContainerStyle} id = 'cart-container' >
+         
+            return (
+                <div clasName = 'jubmbotron' style = {cartContainerStyle} id = 'cart-container' >
 
-                   <div className = 'd-flex mt-4 px-4'>
-                     <h3 style = {headingStyle}>CART(3)</h3> <span id = 'cart-close' className = 'ml-auto' onClick = {() => setCartShow(false)}>X</span>
-                   </div> 
+                    <div className = 'd-flex mt-4 px-4'>
+                        { products.length > 0 && <h3 style = {headingStyle}>CART({products.length})</h3> } <span id = 'cart-close' className = 'ml-auto' onClick = {() => setCartShow(false)}>X</span>
+                    </div> 
+                        {products.length > 0 ?  products.map((item) =>  <CartItem />) : <h1> Nothing in cart </h1>   }
+                        
 
-                       <CartItem />
-                       <CartItem />
-                       <CartItem />
+                        { products.length > 0 && <div className = 'mt-4 px-4' id = 'cart-checkout-container '>
+                                <div className = 'd-flex mb-3' id = 'cart-checkout-price-container'>
+                                    <p style = {totalStyle}>TOTAL</p>
+                                    <p style = {totalPriceStyle} className = 'ml-auto'>$ 5,396</p>
+                                </div>
 
-                       <div className = 'mt-4 px-4' id = 'cart-checkout-container '>
-                            <div className = 'd-flex mb-3' id = 'cart-checkout-price-container'>
-                                <p style = {totalStyle}>TOTAL</p>
-                                <p style = {totalPriceStyle} className = 'ml-auto'>$ 5,396</p>
-                            </div>
-
-                            <Link to = {'/checkout'}><div className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn' onClick = {() => setCartShow(false)}>CHECKOUT</div></Link>
-                       </div>
-            </div>
-        )
-    }
+                                <Link to = {'/checkout'}><div className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn' onClick = {() => setCartShow(false)}>CHECKOUT</div></Link>
+                        </div> }
+                </div>
+                ) }
+                 
 
     return ( <> 
     
@@ -36,7 +43,6 @@ const Cart = ({ cartShow, setCartShow}) => {
 
 const cartContainerStyle = {
     position:'absolute',
-    height:'488px',
     top:'100px',
     right:'180px',
     zIndex:'999',
