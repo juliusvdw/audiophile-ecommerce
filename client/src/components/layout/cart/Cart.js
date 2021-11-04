@@ -30,7 +30,7 @@ const Cart = ({ cartShow, setCartShow}) => {
                                     <p style = {totalPriceStyle} className = 'ml-auto'>$ 5,396</p>
                                 </div>
 
-                                <Link to = {'/checkout'}><div className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn' onClick = {() => setCartShow(false)}>CHECKOUT</div></Link>
+                                <Link to = {'/checkout'}><div className = 'btn btn-primary btn-light-custom d-flex mx-auto mb-4' id = 'checkout-btn' onClick = {() => setCartShow(false)}>CHECKOUT</div></Link>
                         </div> }
                 </div>
                 ) }
