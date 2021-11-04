@@ -1,7 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { useMediaQuery } from 'react-responsive'
 
+//Import contexts
+import CartContext from '../../../context/cart/cartContext'
+
 const Product = ({productData}) => {
+
+    //Destructure context + init
+    const cartContext = useContext(CartContext);
+    const {addToCart} = cartContext;
 
     //Set media query for reposnisve size 
     const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 780 })
@@ -35,7 +42,7 @@ const Product = ({productData}) => {
                             <div className = 'product-add-to-cart-container d-flex mt-2'>
                                 <input  className = 'mr-2' type = 'number'  style = {inputStyle}/>
 
-                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn'>ADD TO CART</button>
+                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => addToCart({name:productData.name, price:productData.price, })}>ADD TO CART</button>
                             </div>
                             
                         </div>

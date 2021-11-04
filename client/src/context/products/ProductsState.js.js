@@ -27,8 +27,6 @@ const ProductsState = (props) => {
 
     //DB collection refs
     const productsCollectionRef = collection(db,'product')
-    
-
 
     //Logic
 
