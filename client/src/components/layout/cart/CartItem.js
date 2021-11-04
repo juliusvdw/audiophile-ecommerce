@@ -1,14 +1,14 @@
 import React from'react';
 
 
-const CartItem = () => {
+const CartItem = ({data}) => {
     return (
         <div className = 'd-flex cart-item-container mt-3 px-4' style = {ContainerStyle}>
             <div className = 'cart-item-information-container d-flex'>
-                <img src = '/assets/cart/image-xx59-headphones.jpg' style = {imageStyle}/>
+                <img src = {`${data.image}`} style = {imageStyle}/>
                 <div className = 'cart-price-container ml-3' style = {priceContainerStyle }>
-                    <h6 style = {titleStyle}>XX99 MK 11</h6>
-                    <p style = {priceStyle}>$ 2,999</p>
+                    <h6 style = {titleStyle}>{data.name}</h6>
+                    <p style = {priceStyle}>$ {data.price}</p>
                 </div>
             </div>
             <div className = 'cart-item-amount-container ml-auto'>

@@ -67,7 +67,7 @@ const Product = ({productData}) => {
                             <div className = 'product-add-to-cart-container d-flex mt-2'>
                                 <input  className = 'mr-2' type = 'number' min = '1'  value = {productAmount} style = {inputStyle} onChange = {(e) => setProductAmount(Number(e.target.value))}/>
 
-                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => handleAddToCart({name:productData.name, price:productData.price,amount:productAmount  })}>ADD TO CART</button>
+                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => handleAddToCart({name:productData.name, price:productData.price,amount:productAmount,image:productData.image  })}>ADD TO CART</button>
                             </div>
                             
                         </div>

@@ -21,7 +21,7 @@ const Cart = ({ cartShow, setCartShow}) => {
                     <div className = 'd-flex mt-4 px-4'>
                         { products.length > 0 && <h3 style = {headingStyle}>CART({products.length})</h3> } <span id = 'cart-close' className = 'ml-auto' onClick = {() => setCartShow(false)}>X</span>
                     </div> 
-                        {products.length > 0 ?  products.map((item) =>  <CartItem />) : <h1> Nothing in cart </h1>   }
+                        {products.length > 0 ?  products.map((item) =>  <CartItem data = {{name:item.name, amount:item.amount, price:item.price, image:item.image.mobile}}/>) : <h1> Nothing in cart </h1>   }
                         
 
                         { products.length > 0 && <div className = 'mt-4 px-4' id = 'cart-checkout-container '>
