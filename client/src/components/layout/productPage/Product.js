@@ -1,10 +1,13 @@
-import React, {useContext} from 'react'
+import React, {useContext,useState} from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 //Import contexts
 import CartContext from '../../../context/cart/cartContext'
 
 const Product = ({productData}) => {
+
+    //Local State
+    const [productAmount, setProductAmount] = useState(1)
 
     //Destructure context + init
     const cartContext = useContext(CartContext);
@@ -40,9 +43,9 @@ const Product = ({productData}) => {
                             <p style = {priceStyle} className = 'product-price mb-3'><strong>$ {productData.price}</strong> </p>
 
                             <div className = 'product-add-to-cart-container d-flex mt-2'>
-                                <input  className = 'mr-2' type = 'number'  style = {inputStyle}/>
+                                <input  className = 'mr-2' type = 'number' min = '1' placeholder = '1' style = {inputStyle} onChange = {(e) => setProductAmount(e.target.value)}/>
 
-                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => addToCart({name:productData.name, price:productData.price, })}>ADD TO CART</button>
+                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => addToCart({name:productData.name, price:productData.price, amount:productAmount })}>ADD TO CART</button>
                             </div>
                             
                         </div>
