@@ -14,10 +14,7 @@ export default (state, action) => {
         case CHANGE_CART_AMOUNT:
             return {
                 ...state,
-                products:  state.products.filter((item) =>  {
-                    return (
-                    action.payload.productName === item.name ? item.amount  = action.payload.newAmount : item.amount  ) 
-                } ) 
+                products: action.payload
             }
         default :
         return state
