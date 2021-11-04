@@ -36,10 +36,12 @@ const Product = ({productData}) => {
         
         //See if product is already in cart. If it is, update product amount. If not, add product to cart
         if(products.some((item) => item.name === product.name)){
-            products.some((item) => {
-                item.name === product.name ? newAmount = (product.amount + item.amount) : newAmount = newAmount ;
-                changeCartAmount(product.name, newAmount);
-                setProductAmount(1);
+            products.forEach((item) => {
+                if(item.name === product.name) { 
+                    newAmount = product.amount + item.amount;
+                    changeCartAmount(product.name, newAmount);
+                    };
+                    setProductAmount(1);
             })
         } else {
             addToCart(product)
