@@ -11,7 +11,7 @@ const Product = ({productData}) => {
 
     //Destructure context + init
     const cartContext = useContext(CartContext);
-    const {addToCart} = cartContext;
+    const {addToCart, changeCartAmount, products} = cartContext;
 
     //Set media query for reposnisve size 
     const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 780 })
@@ -29,6 +29,26 @@ const Product = ({productData}) => {
        productImage = '/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg'
     }
 
+    //Handle set product amount 
+    const handleAddToCart = (product) => {
+
+        let newAmount;
+        
+        //See if product is already in cart. If it is, update product amount. If not, add product to cart
+        if(products.some((item) => item.name === product.name)){
+            products.some((item) => {
+                item.name === product.name ? newAmount = (product.amount + item.amount) : newAmount = newAmount ;
+                changeCartAmount(product.name, newAmount);
+                setProductAmount(1);
+            })
+        } else {
+            addToCart(product)
+        }        
+
+        setProductAmount(1)
+        return;
+    }
+
     return (
         <div id = 'category-product-row' className = 'row' style = {rowStyle}>
                     <div className = 'col-lg-6 col-md-5'>
@@ -43,9 +63,9 @@ const Product = ({productData}) => {
                             <p style = {priceStyle} className = 'product-price mb-3'><strong>$ {productData.price}</strong> </p>
 
                             <div className = 'product-add-to-cart-container d-flex mt-2'>
-                                <input  className = 'mr-2' type = 'number' min = '1' placeholder = '1' style = {inputStyle} onChange = {(e) => setProductAmount(e.target.value)}/>
+                                <input  className = 'mr-2' type = 'number' min = '1'  value = {productAmount} style = {inputStyle} onChange = {(e) => setProductAmount(Number(e.target.value))}/>
 
-                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => addToCart({name:productData.name, price:productData.price, amount:productAmount })}>ADD TO CART</button>
+                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => handleAddToCart({name:productData.name, price:productData.price,amount:productAmount  })}>ADD TO CART</button>
                             </div>
                             
                         </div>

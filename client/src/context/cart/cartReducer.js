@@ -1,6 +1,7 @@
 
 import {
-ADD_TO_CART
+ADD_TO_CART,
+CHANGE_CART_AMOUNT
 } from '../Types'
 
 export default (state, action) => {
@@ -9,6 +10,14 @@ export default (state, action) => {
             return {
                 ...state,
                 products:[...state.products, action.payload]
+            }
+        case CHANGE_CART_AMOUNT:
+            return {
+                ...state,
+                products:  state.products.filter((item) =>  {
+                    return (
+                    action.payload.productName === item.name ? item.amount  = action.payload.newAmount : item.amount  ) 
+                } ) 
             }
         default :
         return state

@@ -7,4 +7,5 @@ export const SET_SINGLE_PRODUCT = "SET_SINGLE_PRODUCT";
 export const SET_PRODUCT_LOADING = "SET_PRODUCT_LOADING";
 
 //Cart state types
-export  const ADD_TO_CART = 'ADD_TO_CART'
+export  const ADD_TO_CART = 'ADD_TO_CART';
+export const CHANGE_CART_AMOUNT = 'CHANGE_CART_AMOUNT'
