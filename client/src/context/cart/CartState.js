@@ -28,8 +28,18 @@ const CartState = (props) => {
 
     //Change amount of items in cart
     const changeCartAmount = (productName, newAmount) => {
+
+        let updatedProducts = [...state.products]
+        let updatedProduct;
+                
+        //Find index of object to update in state.products
+        const index = updatedProducts.findIndex((item) => item.name == productName);
+        updatedProduct = updatedProducts[index];
+        updatedProduct.amount = newAmount;
+
+        updatedProducts[index] = updatedProduct;
         
-        dispatch ({type:CHANGE_CART_AMOUNT, payload:{productName, newAmount}});
+        dispatch ({type:CHANGE_CART_AMOUNT, payload:updatedProducts});
         return;
     }
 
