@@ -1,7 +1,14 @@
-import React from'react';
+import React, {useContext} from'react';
 
+
+//Import context
+import CartContext from '../../../context/cart/cartContext'
 
 const CartItem = ({data}) => {
+
+    const cartContext = useContext(CartContext);
+    const {changeCartAmount} = cartContext;
+
     return (
         <div className = 'd-flex cart-item-container mt-3 px-4' style = {ContainerStyle}>
             <div className = 'cart-item-information-container d-flex'>
@@ -12,7 +19,7 @@ const CartItem = ({data}) => {
                 </div>
             </div>
             <div className = 'cart-item-amount-container ml-auto'>
-                <input type = 'number'  style = {inputStyle}/>
+                <input type = 'number'  style = {inputStyle} placeholder = {data.amount} onChange = {(e) => changeCartAmount(data.name,Number(e.target.value))}/>
             </div>
         </div>
     )
