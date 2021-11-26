@@ -1,8 +1,21 @@
-import React from 'react'
+import React, {useContext} from 'react'
 
 import SummaryItem from './SummaryItem'
 
+//Import context
+import CartContext from '../../../context/cart/cartContext'
+
 const CheckoutSummary = () => {
+
+    const cartContext = useContext(CartContext);
+    const {products} = cartContext
+
+    //Determine total of all products 
+    let total = 0;
+    products.forEach(product => {
+        total += product.totalPrice
+    })
+
     return (
         <div>
             <div clasName = 'jubmbotron' style = {cartContainerStyle} id = 'cart-summary-container' >
@@ -11,15 +24,17 @@ const CheckoutSummary = () => {
                 <h3 style = {headingStyle}>Summary</h3> 
                 </div> 
 
-                <SummaryItem />
-                <SummaryItem />
-                <SummaryItem />
+                {products.length > 0 && products.map(product => {
+                    return (
+                        <SummaryItem product = {product} />
+                    )
+                })}
 
 
                     <div className = 'mt-4 px-4' id = 'cart-checkout-container '>
                         <div className = 'd-flex mb-3' id = 'cart-checkout-price-container'>
                             <p style = {totalStyle}>TOTAL</p>
-                            <p style = {totalPriceStyle} className = 'ml-auto'>$ 5,396</p>
+                            <p style = {totalPriceStyle} className = 'ml-auto'>$ {total}.00</p>
                         </div>
 
                         <dv className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn'>CONTINUE & PAY</dv>

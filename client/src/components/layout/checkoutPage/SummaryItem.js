@@ -1,17 +1,21 @@
-import React from 'react'
+import React,{useContext} from 'react'
 
-const SummaryItem = () => {
+
+
+const SummaryItem = ({product}) => {
+
+   
     return (
         <div className = 'd-flex cart-item-container mt-3 px-4' style = {containerStyle}>
         <div className = 'cart-item-information-container d-flex'>
-            <img src = '/assets/cart/image-xx59-headphones.jpg' style = {imageStyle}/>
+            <img src = {`${product.image.mobile}`} style = {imageStyle}/>
             <div className = 'cart-price-container ml-3' style = {priceContainerStyle }>
-                <h6 style = {titleStyle}>XX99 MK 11</h6>
-                <p style = {priceStyle}>$ 2,999</p>
+                <h6 style = {titleStyle}>{product.name}</h6>
+                <p style = {priceStyle}>{product.price}</p>
             </div>
         </div>
         <div className = 'summary-item-amount-container ml-auto'>
-            <p>x2</p>
+            <p>x{product.amount}</p>
         </div>
     </div>
     )
