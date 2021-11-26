@@ -9,7 +9,8 @@ export default (state, action) => {
         case ADD_TO_CART:
             return {
                 ...state,
-                products:[...state.products, action.payload]
+                products:[...state.products, action.payload],
+                
             }
         case CHANGE_CART_AMOUNT:
             return {

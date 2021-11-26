@@ -19,7 +19,7 @@ const CartItem = ({data}) => {
                 </div>
             </div>
             <div className = 'cart-item-amount-container ml-auto'>
-                <input type = 'number'  style = {inputStyle} placeholder = {data.amount} onChange = {(e) => changeCartAmount(data.name,Number(e.target.value))}/>
+                <input type = 'number' min = '1'  style = {inputStyle} value = {data.amount} onChange = {(e) => changeCartAmount(data.name,Number(e.target.value))}/>
             </div>
         </div>
     )

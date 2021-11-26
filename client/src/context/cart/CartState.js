@@ -13,6 +13,7 @@ const CartState = (props) => {
     const initialState = {
         products:[],
         cartLoading: false,
+        total: 0,
     }
 
     const [state,dispatch] = useReducer(cartReducer, initialState);
@@ -22,6 +23,8 @@ const CartState = (props) => {
     //Add product to cart
     const addToCart = (product) => {
             console.log('adding to cart')
+            //Logic to determine price of current product in basket check amount * price
+            product.totalPrice = product.price * product.amount
             dispatch({type:ADD_TO_CART, payload: product});
             return;   
     }
@@ -36,6 +39,8 @@ const CartState = (props) => {
         const index = updatedProducts.findIndex((item) => item.name == productName);
         updatedProduct = updatedProducts[index];
         updatedProduct.amount = newAmount;
+        updatedProduct.totalPrice = updatedProduct.price * updatedProduct.amount
+        
 
         updatedProducts[index] = updatedProduct;
         

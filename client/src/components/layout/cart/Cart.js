@@ -10,6 +10,12 @@ const Cart = ({ cartShow, setCartShow}) => {
     const cartContext = useContext(CartContext);
     const {products} = cartContext;
 
+    //Logic to determine total output
+        let total = 0;
+        products.forEach(product => {
+            total += product.totalPrice
+        })
+
     
 
     
@@ -27,7 +33,7 @@ const Cart = ({ cartShow, setCartShow}) => {
                         { products.length > 0 && <div className = 'mt-4 px-4' id = 'cart-checkout-container '>
                                 <div className = 'd-flex mb-3' id = 'cart-checkout-price-container'>
                                     <p style = {totalStyle}>TOTAL</p>
-                                    <p style = {totalPriceStyle} className = 'ml-auto'>$ 5,396</p>
+                                    <p style = {totalPriceStyle} className = 'ml-auto'>$ {total}.00</p>
                                 </div>
 
                                 <Link to = {'/checkout'}><div className = 'btn btn-primary btn-light-custom d-flex mx-auto mb-4' id = 'checkout-btn' onClick = {() => setCartShow(false)}>CHECKOUT</div></Link>
