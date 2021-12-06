@@ -45,7 +45,7 @@ const CheckoutSummary = () => {
                     </div>
                 </div>
 
-                <PaySuccessModal show = {modalShow} onHide = {setModalShow} />
+                <PaySuccessModal show = {modalShow} onHide = {setModalShow} products = {products} />
         </div>
     )
 }
