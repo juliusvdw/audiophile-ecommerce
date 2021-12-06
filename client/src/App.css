@@ -12,9 +12,6 @@ a:hover {
   cursor:pointer
 }
 
-
-
-
 .btn-light-custom {
   background-color: #D87D4A;
   font-size: 13px;
@@ -561,7 +558,17 @@ a:hover {
     width: 90% !important;
   }
 
+  }
 
+  /*Checkout modal styling */
 
+  .checkout-modal {
+    max-width: 540px !important;
+    width: 540px !important;
+  }
+
+  .modal-body {
+    padding: 50px;
+    border-radius: 8px  !important;
   }
 
