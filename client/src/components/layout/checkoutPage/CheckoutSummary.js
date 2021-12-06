@@ -1,11 +1,15 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 
 import SummaryItem from './SummaryItem'
+import PaySuccessModal from './PaySuccessModal'
 
 //Import context
 import CartContext from '../../../context/cart/cartContext'
 
 const CheckoutSummary = () => {
+
+    //Modal show state
+    const [modalShow,setModalShow] = useState(false);
 
     const cartContext = useContext(CartContext);
     const {products} = cartContext
@@ -37,9 +41,11 @@ const CheckoutSummary = () => {
                             <p style = {totalPriceStyle} className = 'ml-auto'>$ {total}.00</p>
                         </div>
 
-                        <dv className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn'>CONTINUE & PAY</dv>
+                        <dv className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn' onClick = {() => setModalShow(true)}>CONTINUE & PAY</dv>
                     </div>
                 </div>
+
+                <PaySuccessModal show = {modalShow} onHide = {setModalShow} />
         </div>
     )
 }
