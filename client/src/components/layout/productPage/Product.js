@@ -8,6 +8,7 @@ const Product = ({productData}) => {
 
     //Local State
     const [productAmount, setProductAmount] = useState(1)
+    const [addToCartLoading, setAddToCartLoading] = useState(false)
 
     //Destructure context + init
     const cartContext = useContext(CartContext);
@@ -32,9 +33,12 @@ const Product = ({productData}) => {
     //Handle set product amount 
     const handleAddToCart = (product) => {
 
+        setAddToCartLoading(true)
+
         let newAmount;
-        
-        //See if product is already in cart. If it is, update product amount. If not, add product to cart
+
+        setTimeout(() => {
+            //See if product is already in cart. If it is, update product amount. If not, add product to cart
         if(products.some((item) => item.name === product.name)){
             products.forEach((item) => {
                 if(item.name === product.name) { 
@@ -42,10 +46,16 @@ const Product = ({productData}) => {
                     changeCartAmount(product.name, newAmount);
                     };
                     setProductAmount(1);
+                    setAddToCartLoading(false)
             })
         } else {
-            addToCart(product)
+            addToCart(product);
+            setAddToCartLoading(false)
         }        
+
+        }, 1000)
+        
+        
 
         setProductAmount(1)
         return;
@@ -67,7 +77,10 @@ const Product = ({productData}) => {
                             <div className = 'product-add-to-cart-container d-flex mt-2'>
                                 <input  className = 'mr-2' type = 'number' min = '1'  value = {productAmount} style = {inputStyle} onChange = {(e) => setProductAmount(Number(e.target.value))}/>
 
-                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => handleAddToCart({name:productData.name, price:productData.price,amount:productAmount,image:productData.image  })}>ADD TO CART</button>
+                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => handleAddToCart({name:productData.name, price:productData.price,amount:productAmount,image:productData.image  })}>{!addToCartLoading ? <span> ADD TO CART</span> :
+                                <div class="spinner-border spinner-border-sm text-light" role="status">
+                                <span class="sr-only">Loading...</span></div>}
+                             </button>
                             </div>
                             
                         </div>

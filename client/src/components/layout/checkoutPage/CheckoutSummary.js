@@ -8,8 +8,9 @@ import CartContext from '../../../context/cart/cartContext'
 
 const CheckoutSummary = () => {
 
-    //Modal show state
+    //Set States
     const [modalShow,setModalShow] = useState(false);
+    const [payLoading,setPayloading] = useState(false)
 
     const cartContext = useContext(CartContext);
     const {products} = cartContext
@@ -19,6 +20,19 @@ const CheckoutSummary = () => {
     products.forEach(product => {
         total += product.totalPrice
     })
+
+    //Handle modal show on click of continue and pay
+    const handleModalShow = (bool) => {
+
+        setPayloading(true)
+        
+        //Set timeout to improve user experience from click till the modal shows (set loading animation)
+        setTimeout(() => {
+            setModalShow(bool);
+            setPayloading(false)
+        },1000)
+
+    }
 
     return (
         <div>
@@ -41,7 +55,10 @@ const CheckoutSummary = () => {
                             <p style = {totalPriceStyle} className = 'ml-auto'>$ {total}.00</p>
                         </div>
 
-                        <dv className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn' onClick = {() => setModalShow(true)}>CONTINUE & PAY</dv>
+                        <div className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn' onClick = {() => handleModalShow(true)}>{!payLoading ? <span> PAY & CONTINUE</span> :
+                        <div class="spinner-border spinner-border-sm text-light" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>}</div>
                     </div>
                 </div>
 
