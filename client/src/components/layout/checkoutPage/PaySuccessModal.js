@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {useHistory} from 'react-router-dom'
 import {Modal, Button} from 'react-bootstrap'
 
+import CartContext from '../../../context/cart/cartContext';
+
 const PaySuccessModal = (props) =>  {
+
+  const history = useHistory();
+
+  //Use cart context 
+  const cartContext = useContext(CartContext)
+  const {clearCart} = cartContext
 
   //Determine total amount of cart
   let totalPrice = 0;
@@ -9,12 +18,20 @@ const PaySuccessModal = (props) =>  {
     totalPrice += product.totalPrice
 
   })
+
+  //Handle back to home button click
+  const handleExit = () => {
+
+    history.push('/');
+    clearCart()
+  }
     return (
         <div>
             <Modal
       {...props}
       dialogClassName="checkout-modal"
       aria-labelledby="contained-modal-title-vcenter"
+      backdrop = 'static'
       centered
     >
     
@@ -55,7 +72,7 @@ const PaySuccessModal = (props) =>  {
             
         </div>
 
-        <div className = 'btn btn-primary btn-light-custom d-flex w-100 ' style = {btnStyle}>BACK TO HOME</div>
+        <div className = 'btn btn-primary btn-light-custom d-flex w-100 ' style = {btnStyle} onClick = {() => handleExit()}>BACK TO HOME</div>
       </Modal.Body>
       
     </Modal> 

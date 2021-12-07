@@ -6,7 +6,8 @@ import cartReducer from "./cartReducer";
 
 import {
     ADD_TO_CART ,
-    CHANGE_CART_AMOUNT
+    CHANGE_CART_AMOUNT,
+    CLEAR_CART
 } from '../Types'
 
 const CartState = (props) => {
@@ -27,6 +28,11 @@ const CartState = (props) => {
             product.totalPrice = product.price * product.amount
             dispatch({type:ADD_TO_CART, payload: product});
             return;   
+    }
+
+    //Clear all items from cart
+    const clearCart = () => {
+        dispatch({type:CLEAR_CART})
     }
 
     //Change amount of items in cart
@@ -54,6 +60,7 @@ const CartState = (props) => {
                 products:state.products,
                 addToCart,
                 changeCartAmount,
+                clearCart
             }}
         >
             {props.children}

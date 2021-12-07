@@ -1,7 +1,8 @@
 
 import {
 ADD_TO_CART,
-CHANGE_CART_AMOUNT
+CHANGE_CART_AMOUNT,
+CLEAR_CART
 } from '../Types'
 
 export default (state, action) => {
@@ -16,6 +17,11 @@ export default (state, action) => {
             return {
                 ...state,
                 products: action.payload
+            }
+        case CLEAR_CART:
+            return {
+                ...state,
+                products: []
             }
         default :
         return state
