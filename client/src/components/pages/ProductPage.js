@@ -36,7 +36,8 @@ const ProductPage = (props) => {
                       image : singleProduct[0].image,
                       name : singleProduct[0].name,
                       isNew : singleProduct[0].new,
-                      price : singleProduct[0].price }}/> 
+                      price : singleProduct[0].price,
+                      slug: singleProduct[0].slug }}/> 
     
                       <FeaturesSection productData = {{
                         features :  singleProduct[0].features,

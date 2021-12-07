@@ -33,6 +33,8 @@ const Product = ({productData}) => {
     //Handle set product amount 
     const handleAddToCart = (product) => {
 
+        console.log(product)
+
         setAddToCartLoading(true)
 
         let newAmount;
@@ -77,7 +79,7 @@ const Product = ({productData}) => {
                             <div className = 'product-add-to-cart-container d-flex mt-2'>
                                 <input  className = 'mr-2' type = 'number' min = '1'  value = {productAmount} style = {inputStyle} onChange = {(e) => setProductAmount(Number(e.target.value))}/>
 
-                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => handleAddToCart({name:productData.name, price:productData.price,amount:productAmount,image:productData.image  })}>{!addToCartLoading ? <span> ADD TO CART</span> :
+                             <button className = 'btn btn-lg btn-light-custom d-flex text-white add-to-cart-btn' onClick = {() => handleAddToCart({name:productData.name, price:productData.price,amount:productAmount,image:productData.image, slug:productData.slug  })}>{!addToCartLoading ? <span> ADD TO CART</span> :
                                 <div class="spinner-border spinner-border-sm text-light" role="status">
                                 <span class="sr-only">Loading...</span></div>}
                              </button>
