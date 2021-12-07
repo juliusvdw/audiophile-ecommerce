@@ -2,6 +2,13 @@ import React from 'react';
 import {Modal, Button} from 'react-bootstrap'
 
 const PaySuccessModal = (props) =>  {
+
+  //Determine total amount of cart
+  let totalPrice = 0;
+  props.products.forEach(product => {
+    totalPrice += product.totalPrice
+
+  })
     return (
         <div>
             <Modal
@@ -20,10 +27,30 @@ const PaySuccessModal = (props) =>  {
 
         <div style = {productBoxStyle}>
           <div className = 'modal-product-left' style = {boxLeftStyle}> 
-          
+              <div className = 'cart-item-information-container d-flex'>
+                <img src = {`${props.products[0].image.mobile}`} style = {boxImageStyle}/>
+                <div className = 'cart-price-container ml-3' style = {boxPriceContainerStyle }>
+                    <h6 style = {boxTitleStyle}>{props.products[0].name}</h6>
+                    <div className = 'd-flex' style = {rowTwoStyle} > 
+                      <p style = {boxPriceStyle}>$ {props.products[0].price}</p>
+                      <p classname = 'ml-4' style = {boxPriceStyle}>x{props.products[0].amount}</p>
+                    </div>
+                    
+                </div>
+              
+            </div>
+            { props.products.length > 1 &&
+            <>
+              <hr className = 'mt-1'/>
+              
+              <p className = 'mx-auto text-center' style = {moreItemsStyle}> And {props.products.length -1 } other Items </p>
+
+            </>
+            }
           </div>
-          <div className = 'modal-product-right' style = {boxRightStyle}> 
-          
+          <div className = 'modal-product-right text-white' style = {boxRightStyle}> 
+            <h6 style = {totalHeadingStyle}>GRAND TOTAL</h6>
+            <p style = {totalPriceStyle}> $ {totalPrice}</p>
           </div>
             
         </div>
@@ -58,7 +85,7 @@ const subtextStyle = {
 
 const productBoxStyle = {
   width:'444px',
-  height:'140px',
+  minHeight:'140px',
   borderRadius:'8px',
   display:'flex'
 
@@ -66,19 +93,71 @@ const productBoxStyle = {
 
 const boxLeftStyle  = {
   flex:'1',
+  padding:'15px',
   backgroundColor:'#f1f1f1',
-  borderRadius:'8px 0px 0px 8px'
+  borderRadius:'8px 0px 0px 8px',
+  alignItems:'center',
+  justifyContent:'center',
+  
 }
 const boxRightStyle  = {
   flex:'1',
+  display:'flex',
+  flexDirection:'column',
+  justifyContent:'center',
   backgroundColor:'#000000',
-  borderRadius:'0px 8px 8px 0px'
+  borderRadius:'0px 8px 8px 0px',
+  paddingLeft:'30px'
 }
 
 const btnStyle = {
 marginTop:'50px'
 
 }
+
+const boxImageStyle = {
+  height:'64px',
+  width:'64px',
+  borderRadius:'8px'
+  }
+  
+  const boxTitleStyle = {
+      fontSize:'15px',
+      fontWeight:'bold'
+  }
+  
+  
+  const boxPriceContainerStyle = {
+      marginTop:'10px'
+  }
+  
+  const boxPriceStyle = {
+      fontSize:'14px',
+      opacity:'0.5',
+      fontWeight:'bold',
+  }
+
+  const rowTwoStyle = {
+    width:'80%',
+    justifyContent:'space-between'
+  }
+
+  const moreItemsStyle = {
+    fontSize:'12px',
+    opacity:'0.5',
+    fontWeight:'bold'
+  }
+
+  const totalHeadingStyle = {
+    fontSize:'15px',
+    fontWeight:'bold',
+    opacity:'0.5'
+  }
+  const totalPriceStyle = {
+    fontWeight:'bold',
+    fontSize:'18px'
+  }
+ 
 
 
 export default PaySuccessModal
