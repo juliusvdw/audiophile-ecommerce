@@ -12,4 +12,7 @@ export const CHANGE_CART_AMOUNT = 'CHANGE_CART_AMOUNT';
 export const CLEAR_CART = 'CLEAR_CART';
 
 //Checkout state types
-export const SET_CHECKOUT_FIELDS = 'SET_CHECKOUT_FIELDS'
+export const SET_CHECKOUT_FIELDS = 'SET_CHECKOUT_FIELDS';
+export const SET_ERROR = 'SET_ERROR';
+export const CLEAR_ERROR = 'CLEAR_ERROR';
+

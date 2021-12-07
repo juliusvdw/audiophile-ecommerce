@@ -4,7 +4,9 @@ import SummaryItem from './SummaryItem'
 import PaySuccessModal from './PaySuccessModal'
 
 //Import context
-import CartContext from '../../../context/cart/cartContext'
+import CartContext from '../../../context/cart/cartContext';
+import CheckoutContext from '../../../context/checkout/checkoutContext';
+
 
 const CheckoutSummary = () => {
 
@@ -15,6 +17,9 @@ const CheckoutSummary = () => {
 
     const cartContext = useContext(CartContext);
     const {products, clearCart} = cartContext
+
+    const checkoutContext = useContext(CheckoutContext);
+    const {checkoutFields,setError} = checkoutContext;
 
     //Determine total of all products 
     let total = 0;
@@ -30,10 +35,17 @@ const CheckoutSummary = () => {
         
         //Set timeout to improve user experience from click till the modal shows (set loading animation)
         setTimeout(() => {
-            setModalShow(bool);
             setPayloading(false);
-            setPaid(true)
-            
+
+
+            for (const field in checkoutFields) {
+                if(checkoutFields[field ] == '') {
+                    setError()
+                    return
+                };
+              }
+
+            setModalShow(bool);
         },1000)
 
     }
@@ -62,7 +74,7 @@ const CheckoutSummary = () => {
                                 <p style = {totalPriceStyle} className = 'ml-auto'>$ {total}.00</p>
                             </div>
     
-                            <div className = 'btn btn-primary btn-light-custom d-flex mx-auto' id = 'checkout-btn' onClick = {() => handleModalShow(true)}>{!payLoading ? <span> PAY & CONTINUE</span> :
+                            <div className = 'btn btn-primary btn-light-custom d-flex mx-auto ' id = 'checkout-btn' onClick = {() => handleModalShow(true)}>{!payLoading ? <span> PAY & CONTINUE</span> :
                             <div class="spinner-border spinner-border-sm text-light" role="status">
                             <span class="sr-only">Loading...</span>
                           </div>}</div>
@@ -85,11 +97,12 @@ const CheckoutSummary = () => {
 
 const cartContainerStyle = {
    
-    height:'488px',
+    minHeight:'300px',
     paddingTop:'25px',
     zIndex:'999',
     backgroundColor:'white',
     borderRadius:'8px',
+    paddingBottom:'25px'
     
 }
 

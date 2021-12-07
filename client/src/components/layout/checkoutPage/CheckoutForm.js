@@ -1,11 +1,19 @@
-import React from 'react'
+import React, {useContext} from 'react'
+
+//Import context
+import CheckoutContext from '../../../context/checkout/checkoutContext'
 
 const CheckoutForm = () => {
+
+    const checkoutContext = useContext(CheckoutContext);
+    const {setFields,error} = checkoutContext;
+
+     
     return (
         <div className = '' id = 'checkout-container ' style = {checkoutContainerStyle}>
             <h1 style = {checkoutTitleStyle}>   CHECKOUT</h1>
 
-           
+           <div className=  {`alert alert-danger ${!error ? 'd-none' : 'd-block'}`}>Please complete all fields before proceeding</div>
 
             
             <h6 style = {sectionTitleStyle}>BILLING DETAILS</h6>
@@ -15,19 +23,19 @@ const CheckoutForm = () => {
                     <div className = 'col-lg-6 mt-3'>
                         <div className = 'd-flex flex-column'>
                             <h6 style = {inputLabelStyle}>Name</h6>
-                            <input type = 'text' className = 'form-control' style = {inputStyle}/>
+                            <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
                         </div>
                     </div>
                     <div className = 'col-lg-6 mt-3'>
                         <div className = 'd-flex flex-column'>
                         <h6 style = {inputLabelStyle}>Email Address</h6>
-                            <input type = 'text' className = 'form-control' style = {inputStyle}/>
+                            <input type = 'email' className = 'form-control form-item' style = {inputStyle} required/>
                         </div> 
                     </div>
                     <div className = 'col-lg-6 mt-3'>
                         <div className = 'd-flex flex-column'>
                         <h6 style = {inputLabelStyle}>Phone Number</h6>
-                            <input type = 'text' className = 'form-control' style = {inputStyle}/>
+                            <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
                         </div>
                     </div>
                 </div>
@@ -37,26 +45,26 @@ const CheckoutForm = () => {
                         <div className = 'col-lg-12 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                     <h6 style = {inputLabelStyle}>Address</h6>
-                                    <input type = 'text' className = 'form-control' style = {inputStyle}/>
+                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
                                 </div>
                             </div>
 
                             <div className = 'col-lg-6 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                     <h6 style = {inputLabelStyle}>Zip Code</h6>
-                                    <input type = 'text' className = 'form-control' style = {inputStyle}/>
+                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
                                 </div>
                             </div>
                             <div className = 'col-lg-6 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                 <h6 style = {inputLabelStyle}>City</h6>
-                                    <input type = 'text' className = 'form-control' style = {inputStyle}/>
+                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
                                 </div> 
                             </div>
                             <div className = 'col-lg-6 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                 <h6 style = {inputLabelStyle}>Country</h6>
-                                    <input type = 'text' className = 'form-control' style = {inputStyle}/>
+                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
                                 </div>
                             </div>
                     </div>

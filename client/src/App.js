@@ -17,6 +17,7 @@ import ScrollToTop from './components/function/ScrollToTop';
 //Import context states
 import ProductsState from './context/products/ProductsState.js';
 import CartState from './context/cart/CartState.js';
+import CheckoutState from './context/checkout/CheckoutState';
 
 
 
@@ -32,6 +33,7 @@ function App() {
 
     <ProductsState>
     <CartState>
+    <CheckoutState>
 
     <div className="App" >
       <Router>
@@ -54,6 +56,7 @@ function App() {
       
     </div>
 
+    </CheckoutState>
     </CartState>
     </ProductsState>
   );

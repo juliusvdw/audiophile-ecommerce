@@ -1,6 +1,8 @@
 
 import {
-    SET_CHECKOUT_FIELDS
+    SET_CHECKOUT_FIELDS,
+    SET_ERROR,
+    CLEAR_ERROR
     } from '../Types'
     
     export default (state,action) => {
@@ -9,6 +11,16 @@ import {
                 return {
                     ...state,
                     checkoutFields:action.payload
+                }
+            case    SET_ERROR:
+                return {
+                    ...state,
+                    error:true
+                }
+            case    CLEAR_ERROR:
+                return {
+                    ...state,
+                    error:false
                 }
             
     
