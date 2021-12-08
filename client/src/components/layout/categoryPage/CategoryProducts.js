@@ -54,7 +54,7 @@ const CategoryProductLayout = (props) => {
       <CategoryLeftLoading />
 
       </div>
-      <div className = 'col-lg-6' style = {{paddingLeft:'100px' ,paddingTop:'100px'}}>
+      <div className = 'col-lg-6' style = {{paddingLeft:'120px' ,paddingTop:'120px'}}>
       <ProductTextLoader />
 
       </div>

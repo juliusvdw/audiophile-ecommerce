@@ -12,13 +12,13 @@ const ProductTextLoader = (props) => (
     foregroundColor="#ecebeb"
     {...props}
   >
-    <rect x="18" y="24" rx="0" ry="0" width="278" height="62" /> 
-    <rect x="20" y="194" rx="0" ry="0" width="462" height="31" /> 
-    <rect x="21" y="234" rx="0" ry="0" width="462" height="31" /> 
-    <rect x="19" y="112" rx="0" ry="0" width="462" height="31" /> 
-    <rect x="19" y="152" rx="0" ry="0" width="462" height="31" /> 
-    <rect x="24" y="299" rx="0" ry="0" width="148" height="47" /> 
-    <rect x="193" y="299" rx="0" ry="0" width="148" height="47" />
+    <rect x="26" y="25" rx="0" ry="0" width="278" height="62" /> 
+    <rect x="26" y="226" rx="0" ry="0" width="215" height="20" /> 
+    <rect x="26" y="299" rx="0" ry="0" width="149" height="47" /> 
+    <rect x="26" y="193" rx="0" ry="0" width="462" height="20" /> 
+    <rect x="26" y="158" rx="0" ry="0" width="462" height="20" /> 
+    <rect x="26" y="124" rx="0" ry="0" width="462" height="20" /> 
+    <rect x="26" y="267" rx="0" ry="0" width="68" height="13" />
   </ContentLoader>
 )
 

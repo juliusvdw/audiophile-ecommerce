@@ -31,6 +31,11 @@ const CheckoutState = (props) => {
     const setError = () => {
         dispatch({type:SET_ERROR})
 
+        setTimeout(() => {
+
+          dispatch({type:CLEAR_ERROR})
+
+        }, 50000)
         
     }
 
