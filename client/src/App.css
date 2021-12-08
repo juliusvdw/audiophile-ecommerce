@@ -577,3 +577,9 @@ a:hover {
     border-radius: 8px  !important;
   }
 
+  /*Checkout page inputs */
+
+  .invalid-input {
+    border-color:#d9534f !important;
+  }
+

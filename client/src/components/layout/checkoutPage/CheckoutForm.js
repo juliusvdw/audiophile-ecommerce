@@ -18,9 +18,6 @@ const CheckoutForm = () => {
     return (
         <div className = '' id = 'checkout-container ' style = {checkoutContainerStyle}>
             <h1 style = {checkoutTitleStyle}>   CHECKOUT</h1>
-
-           <div className=  {`alert alert-danger ${!error ? 'd-none' : 'd-block'}`}>Please complete all fields before proceeding</div>
-
             
             <h6 style = {sectionTitleStyle}>BILLING DETAILS</h6>
 
@@ -29,19 +26,19 @@ const CheckoutForm = () => {
                     <div className = 'col-lg-6 mt-3'>
                         <div className = 'd-flex flex-column'>
                             <h6 style = {inputLabelStyle} >Name</h6>
-                            <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'name' value = {checkoutFields.name} onChange = {(e) => handleSetFields(e)} />
+                            <input type = 'text' className = {`form-control form-item ${error && checkoutFields['name'] == '' ? 'invalid-input' : ''}`} style = {inputStyle} name = 'name' value = {checkoutFields.name} onChange = {(e) => handleSetFields(e)} />
                         </div>
                     </div>
                     <div className = 'col-lg-6 mt-3'>
                         <div className = 'd-flex flex-column'>
                         <h6 style = {inputLabelStyle}>Email Address</h6>
-                            <input type = 'email' className = 'form-control form-item' style = {inputStyle} name = 'email' onChange = {(e) => handleSetFields(e)}/>
+                            <input type = 'email' className = {`form-control form-item ${error && checkoutFields['email'] == '' ? 'invalid-input' : ''}`} style = {inputStyle} name = 'email' onChange = {(e) => handleSetFields(e)}/>
                         </div> 
                     </div>
                     <div className = 'col-lg-6 mt-3'>
                         <div className = 'd-flex flex-column'>
                         <h6 style = {inputLabelStyle}>Phone Number</h6>
-                            <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'number'onChange = {(e) => handleSetFields(e)}/>
+                            <input type = 'text' className = {`form-control form-item ${error && checkoutFields['number'] == '' ? 'invalid-input' : ''}`} style = {inputStyle} name = 'number'onChange = {(e) => handleSetFields(e)}/>
                         </div>
                     </div>
                 </div>
@@ -51,26 +48,26 @@ const CheckoutForm = () => {
                         <div className = 'col-lg-12 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                     <h6 style = {inputLabelStyle}>Address</h6>
-                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'address' onChange = {(e) => handleSetFields(e)}red/>
+                                    <input type = 'text' className = {`form-control form-item ${error && checkoutFields['address'] == '' ? 'invalid-input' : ''}`} style = {inputStyle} name = 'address' onChange = {(e) => handleSetFields(e)}red/>
                                 </div>
                             </div>
 
                             <div className = 'col-lg-6 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                     <h6 style = {inputLabelStyle}>Zip Code</h6>
-                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'zipCode' onChange = {(e) => handleSetFields(e)}/>
+                                    <input type = 'text' className = {`form-control form-item ${error && checkoutFields['zipCode'] == '' ? 'invalid-input' : ''}`} style = {inputStyle} name = 'zipCode' onChange = {(e) => handleSetFields(e)}/>
                                 </div>
                             </div>
                             <div className = 'col-lg-6 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                 <h6 style = {inputLabelStyle}>City</h6>
-                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'city' onChange = {(e) => handleSetFields(e)}/>
+                                    <input type = 'text' className = {`form-control form-item ${error && checkoutFields['city'] == '' ? 'invalid-input' : ''}`} style = {inputStyle} name = 'city' onChange = {(e) => handleSetFields(e)}/>
                                 </div> 
                             </div>
                             <div className = 'col-lg-6 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                 <h6 style = {inputLabelStyle}>Country</h6>
-                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'country' onChange = {(e) => handleSetFields(e)}/>
+                                    <input type = 'text' className = {`form-control form-item ${error && checkoutFields['country'] == '' ? 'invalid-input' : ''}`} style = {inputStyle} name = 'country' onChange = {(e) => handleSetFields(e)}/>
                                 </div>
                             </div>
                     </div>
@@ -141,7 +138,8 @@ const inputLabelStyle = {
 
 const inputStyle = {
     height:'56px',
-    borderRadius:'8px'
+    borderRadius:'8px',
+    transition:'0.3s'
 }
 const checkboxStyle = {
    height:'54px',
@@ -151,5 +149,13 @@ const checkboxStyle = {
    alignItems:'center',
    fontWeight:'bold',
    fontSize:'14px'
+}
+
+const alertStyle = {
+    width:'60%',
+    fontSize:'14px',
+    height:'40px',
+    padding: '5px',
+    alignItems:'center',
 }
 export default CheckoutForm

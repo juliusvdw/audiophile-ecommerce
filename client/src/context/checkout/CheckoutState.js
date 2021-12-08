@@ -33,7 +33,7 @@ const CheckoutState = (props) => {
 
         setTimeout(() => {
             dispatch({type:CLEAR_ERROR})
-        },2000)
+        },50000)
     }
 
     //Clear input fields
