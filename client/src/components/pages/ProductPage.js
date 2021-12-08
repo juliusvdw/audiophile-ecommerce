@@ -7,7 +7,8 @@ import ThreeImages from '../layout/productPage/ThreeImages'
 import Recommended from '../layout/productPage/Recommended'
 import CategoriesSection from '../layout/CategoriesSection'
 import InformationSection from '../layout/InformationSection'
-import CategoryLeftLoading from '../layout/categoryPage/CategoryLeftLoading';
+import CategoryLeftLoading from '../layout/CategoryLeftLoading';
+import ProductTextLoader from '../layout/ProductTextLoader';
 
 import ProductsContext from '../../context/products/productsContext';
 
@@ -67,8 +68,17 @@ const ProductPage = (props) => {
     } else {
       return (
         <div className = 'container'>
+          <div className = 'row'>
+            <div className = 'col-lg-6'>
+            <CategoryLeftLoading />
+
+            </div>
+            <div className = 'col-lg-6' style = {{paddingLeft:'100px' ,paddingTop:'100px'}}>
+            <ProductTextLoader />
+
+            </div>
+          </div>
           
-       <CategoryLeftLoading />
 
        </div> )
     }

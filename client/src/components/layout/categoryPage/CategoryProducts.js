@@ -2,7 +2,8 @@ import React,{useContext, useEffect} from 'react'
 
 import CategoryProductLeft from './CategoryProductLeft'
 import CategoryProductRight from './CategoryProductRight'
-import CategoryLeftLoading from './CategoryLeftLoading'
+import CategoryLeftLoading from '../CategoryLeftLoading'
+import ProductTextLoader from '../ProductTextLoader'
 
 //Import context
 import ProductsContext from '../../../context/products/productsContext';
@@ -45,9 +46,22 @@ const CategoryProductLayout = (props) => {
         </>
     )
  } else {
-     return (
-        <CategoryLeftLoading />
-     )
+
+    return (
+    <div className = 'container'>
+    <div className = 'row'>
+      <div className = 'col-lg-6'>
+      <CategoryLeftLoading />
+
+      </div>
+      <div className = 'col-lg-6' style = {{paddingLeft:'100px' ,paddingTop:'100px'}}>
+      <ProductTextLoader />
+
+      </div>
+    </div>
+    
+
+ </div> )
  }
     
 }

@@ -13,7 +13,7 @@ const CategoryLeftLoading = (props) => {
     foregroundColor="#ecebeb"
     {...props}
   >
-    <rect x="25" y="4" rx="8" ry="8" width="542" height="470" />
+    <rect x="25" y="4" rx="8" ry="8" width="542" height="550" />
   </ContentLoader>
   )
 }
