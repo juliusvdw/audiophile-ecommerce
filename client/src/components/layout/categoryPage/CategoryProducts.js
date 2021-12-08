@@ -1,9 +1,12 @@
 import React,{useContext, useEffect} from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 import CategoryProductLeft from './CategoryProductLeft'
 import CategoryProductRight from './CategoryProductRight'
 import CategoryLeftLoading from '../CategoryLeftLoading'
 import ProductTextLoader from '../ProductTextLoader'
+import MobileProductLoader from '../MobileProductLoader'
+import MobileProductTextLoader from '../MobileProductTextLoader'
 
 //Import context
 import ProductsContext from '../../../context/products/productsContext';
@@ -17,6 +20,12 @@ const CategoryProductLayout = (props) => {
     //Init context and destructure needed logic
     const productsContext = useContext(ProductsContext)
     const {activeCategoryProducts, activeCategory,loading } = productsContext;
+
+    //Set media query for reposnisve size 
+  const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 780 })
+  const isDesktop  = useMediaQuery({ minWidth: 1024 })
+  const isMobile  = useMediaQuery({ maxWidth: 480 })
+
 
   
 
@@ -47,21 +56,51 @@ const CategoryProductLayout = (props) => {
     )
  } else {
 
-    return (
-    <div className = 'container'>
-    <div className = 'row'>
-      <div className = 'col-lg-6'>
-      <CategoryLeftLoading />
+    if(isDesktop) {
+        return (
+          <div className = 'container'>
+            <div className = 'row'>
+              <div className = 'col-lg-6'>
+              <CategoryLeftLoading />
+  
+              </div>
+              <div className = 'col-lg-6' style = {{paddingLeft:'120px' ,paddingTop:'120px'}}>
+              <ProductTextLoader />
+  
+              </div>
+            </div>
+            
+  
+         </div> )
 
-      </div>
-      <div className = 'col-lg-6' style = {{paddingLeft:'120px' ,paddingTop:'120px'}}>
-      <ProductTextLoader />
+      } else if (isMobile) {
+          return (
+            <div className = 'container text-center' style = {{marginTop:'50px'}}>
+                          <MobileProductLoader />
+                          <MobileProductTextLoader />
 
-      </div>
-    </div>
-    
+            </div>
 
- </div> )
+          )
+
+      } else {
+        return (
+          <div className = 'container'>
+            <div className = 'row'>
+              <div className = 'col-lg-6'>
+              <CategoryLeftLoading />
+  
+              </div>
+              <div className = 'col-lg-6' style = {{paddingLeft:'120px' ,paddingTop:'120px'}}>
+              <ProductTextLoader />
+  
+              </div>
+            </div>
+            
+  
+         </div> )
+
+      }
  }
     
 }

@@ -11,8 +11,15 @@ import CategoryLeftLoading from '../layout/CategoryLeftLoading';
 import ProductTextLoader from '../layout/ProductTextLoader';
 
 import ProductsContext from '../../context/products/productsContext';
+import MobileProductLoader from '../layout/MobileProductLoader';
+import MobileProductTextLoader from '../layout/MobileProductTextLoader';
 
 const ProductPage = (props) => {
+
+  //Set media query for reposnisve size 
+  const isTablet  = useMediaQuery({ minWidth: 481, maxWidth: 780 })
+  const isDesktop  = useMediaQuery({ minWidth: 1024 })
+  const isMobile  = useMediaQuery({ maxWidth: 480 })
 
     //Init context and destructure needed logic
     const productsContext = useContext(ProductsContext)
@@ -66,21 +73,53 @@ const ProductPage = (props) => {
             </>
         )
     } else {
-      return (
-        <div className = 'container'>
-          <div className = 'row'>
-            <div className = 'col-lg-6'>
-            <CategoryLeftLoading />
+       
+      if(isDesktop) {
+        return (
+          <div className = 'container'>
+            <div className = 'row'>
+              <div className = 'col-lg-6'>
+              <CategoryLeftLoading />
+  
+              </div>
+              <div className = 'col-lg-6' style = {{paddingLeft:'120px' ,paddingTop:'120px'}}>
+              <ProductTextLoader />
+  
+              </div>
+            </div>
+            
+  
+         </div> )
+
+      } else if (isMobile) {
+          return (
+            <div className = 'container text-center' style = {{marginTop:'50px'}}>
+                          <MobileProductLoader />
+                          <MobileProductTextLoader />
 
             </div>
-            <div className = 'col-lg-6' style = {{paddingLeft:'120px' ,paddingTop:'120px'}}>
-            <ProductTextLoader />
 
+          )
+
+      } else {
+        return (
+          <div className = 'container'>
+            <div className = 'row'>
+              <div className = 'col-lg-6'>
+              <CategoryLeftLoading />
+  
+              </div>
+              <div className = 'col-lg-6' style = {{paddingLeft:'120px' ,paddingTop:'120px'}}>
+              <ProductTextLoader />
+  
+              </div>
             </div>
-          </div>
-          
+            
+  
+         </div> )
 
-       </div> )
+      }
+      
     }
 }
 
