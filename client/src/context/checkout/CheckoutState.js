@@ -7,7 +7,8 @@ import CheckoutReducer from "./checkoutReducer";
 import { 
     SET_CHECKOUT_FIELDS,
     SET_ERROR,
-    CLEAR_ERROR
+    CLEAR_ERROR,
+    CLEAR_FIELDS
 
 
 } from '../Types';
@@ -21,8 +22,10 @@ const CheckoutState = (props) => {
     const [state,dispatch] = useReducer(CheckoutReducer,initialState);
 
     //Logic
-    const setFields = (inputFields) => {
-        dispatch({type:SET_CHECKOUT_FIELDS, psayload:inputFields})
+    const setFields = (inputName, value) => {
+        let inputFields = state.checkoutFields;
+        inputFields[`${inputName}`] = value;
+        dispatch({type:SET_CHECKOUT_FIELDS, payload:inputFields})
     }
 
     const setError = () => {
@@ -31,6 +34,19 @@ const CheckoutState = (props) => {
         setTimeout(() => {
             dispatch({type:CLEAR_ERROR})
         },2000)
+    }
+
+    //Clear input fields
+    const clearFields = () => {
+
+        let emptyFields = state.checkoutFields;
+        
+
+        for(let field in emptyFields) {
+            emptyFields[field] = ''
+        }
+
+       dispatch({type:CLEAR_FIELDS, payload:emptyFields})
     }
 
 
@@ -42,7 +58,8 @@ const CheckoutState = (props) => {
             checkoutFields:state.checkoutFields,
             error:state.error,
             setFields,
-            setError
+            setError,
+            clearFields
           }}
         >
           {props.children}

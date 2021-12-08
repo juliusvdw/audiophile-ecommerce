@@ -15,4 +15,5 @@ export const CLEAR_CART = 'CLEAR_CART';
 export const SET_CHECKOUT_FIELDS = 'SET_CHECKOUT_FIELDS';
 export const SET_ERROR = 'SET_ERROR';
 export const CLEAR_ERROR = 'CLEAR_ERROR';
+export const CLEAR_FIELDS = 'CLEAR_FIELDS';
 

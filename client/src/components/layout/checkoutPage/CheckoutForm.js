@@ -2,11 +2,17 @@ import React, {useContext} from 'react'
 
 //Import context
 import CheckoutContext from '../../../context/checkout/checkoutContext'
+import { SET_CHECKOUT_FIELDS } from '../../../context/Types';
 
 const CheckoutForm = () => {
 
     const checkoutContext = useContext(CheckoutContext);
-    const {setFields,error} = checkoutContext;
+    const {setFields,error,checkoutFields} = checkoutContext;
+
+    const handleSetFields = (e) => {
+        setFields(e.target.name,e.target.value)
+        
+    }
 
      
     return (
@@ -22,20 +28,20 @@ const CheckoutForm = () => {
                    
                     <div className = 'col-lg-6 mt-3'>
                         <div className = 'd-flex flex-column'>
-                            <h6 style = {inputLabelStyle}>Name</h6>
-                            <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
+                            <h6 style = {inputLabelStyle} >Name</h6>
+                            <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'name' value = {checkoutFields.name} onChange = {(e) => handleSetFields(e)} />
                         </div>
                     </div>
                     <div className = 'col-lg-6 mt-3'>
                         <div className = 'd-flex flex-column'>
                         <h6 style = {inputLabelStyle}>Email Address</h6>
-                            <input type = 'email' className = 'form-control form-item' style = {inputStyle} required/>
+                            <input type = 'email' className = 'form-control form-item' style = {inputStyle} name = 'email' onChange = {(e) => handleSetFields(e)}/>
                         </div> 
                     </div>
                     <div className = 'col-lg-6 mt-3'>
                         <div className = 'd-flex flex-column'>
                         <h6 style = {inputLabelStyle}>Phone Number</h6>
-                            <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
+                            <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'number'onChange = {(e) => handleSetFields(e)}/>
                         </div>
                     </div>
                 </div>
@@ -45,26 +51,26 @@ const CheckoutForm = () => {
                         <div className = 'col-lg-12 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                     <h6 style = {inputLabelStyle}>Address</h6>
-                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
+                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'address' onChange = {(e) => handleSetFields(e)}red/>
                                 </div>
                             </div>
 
                             <div className = 'col-lg-6 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                     <h6 style = {inputLabelStyle}>Zip Code</h6>
-                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
+                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'zipCode' onChange = {(e) => handleSetFields(e)}/>
                                 </div>
                             </div>
                             <div className = 'col-lg-6 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                 <h6 style = {inputLabelStyle}>City</h6>
-                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
+                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'city' onChange = {(e) => handleSetFields(e)}/>
                                 </div> 
                             </div>
                             <div className = 'col-lg-6 mt-3'>
                                 <div className = 'd-flex flex-column'>
                                 <h6 style = {inputLabelStyle}>Country</h6>
-                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} required/>
+                                    <input type = 'text' className = 'form-control form-item' style = {inputStyle} name = 'country' onChange = {(e) => handleSetFields(e)}/>
                                 </div>
                             </div>
                     </div>

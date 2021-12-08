@@ -19,7 +19,7 @@ const CheckoutSummary = () => {
     const {products, clearCart} = cartContext
 
     const checkoutContext = useContext(CheckoutContext);
-    const {checkoutFields,setError} = checkoutContext;
+    const {checkoutFields,setError, clearFields} = checkoutContext;
 
     //Determine total of all products 
     let total = 0;
@@ -46,6 +46,7 @@ const CheckoutSummary = () => {
               }
 
             setModalShow(bool);
+            clearFields()
         },1000)
 
     }
